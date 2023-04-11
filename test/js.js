@@ -16,7 +16,7 @@ rightButtons.forEach(function(rightButton){
     rightButton.addEventListener('click', function(event){
         let parentDiv = event.target.closest('.img-container').querySelector('.img-slider');
         parentDiv.scrollBy({
-            left: parentDiv.offsetWidth,
+            left: 300,
             behavior: 'smooth'
         })
     })
@@ -28,20 +28,50 @@ leftButtons.forEach(function(leftButton){
     leftButton.addEventListener('click', function(event){
         let parentDiv = event.target.closest('.img-container').querySelector('.img-slider');
         parentDiv.scrollBy({
-            left: -parentDiv.offsetWidth,
+            // left: -parentDiv.offsetWidth,
+            left: -300,
             behavior: 'smooth'
         })
     })
 })
 
 
-let images = document.getElementsByTagName("img");
+let stations = document.querySelector(".station");
+let dropdown = document.querySelector(".list-dropdown")
+stations.addEventListener('click', () => {
+    stations.classList.toggle('active')
+    dropdown.classList.toggle('active')
+})
 
-for (i = 0; i < images.length; i++) { 
-    if(images[i].naturalHeight < images[i].naturalWidth){
-        images[i].classList.add('landscape');
-    }else if(images[i].naturalHeight > images[i].naturalWidth){
-        images[i].classList.add('portrait');
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to('.select',{
+    scrollTrigger: {
+        trigger: ".lower",
+        start: "top 10%",
+        end: "bottom 75%",
+        toggleActions: "",
+        toggleClass: { className: "active", targets: ".select" },
+        markers: {
+            startColor: 'black',
+            endColor: "blue",
+            fontSize: '1.75rem',
+        },
     }
-    console.log(images[i].naturalHeight + " img " + images[i].naturalWidth)
-}
+})
+
+gsap.to('.map',{
+    scrollTrigger: {
+        trigger: ".lower",
+        start: "top 10%",
+        end: "bottom 75%",
+        toggleActions: "",
+        toggleClass: { className: "active", targets: ".map" },
+        markers: {
+            startColor: 'yellow',
+            endColor: "pink",
+            fontSize: '1.75rem',
+        },
+    }
+})

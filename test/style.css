@@ -27,82 +27,104 @@ nav button {
     color: white;
     cursor: pointer;
 }
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .icons {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-ion-icon {
+header ion-icon {
     font-size: 48px;
 }
 
-#container {
+.npy_mod_98 ion-icon,
+.npy_mod_99 ion-icon {
+    font-size: 48px;
+}
+
+/* section npy_mod_100 */
+.npy_mod_98 {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    max-width: 1240px;
-    width: 100%;
+    width: 1240px;
     margin-inline: auto;
     margin-top: 100px;
     overflow-x: visible;
 }
-.text-content {
-    width: 50%;
+
+.npy_mod_98 .text-content {
+    width: 60%;
 }
-.carousel {
-    width: 100%;
-}
-.cards-container {
+
+.npy_mod_98 .cards-container {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     margin-top: 25px;
 }
-.card{
+.npy_mod_98 .cards-container .card{
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 340px;
     min-width: 400px;
     width: 400px;
-    background-color: grey;
     overflow: hidden;
     border-radius: 15px;
+    box-shadow: 0px  0px 25px 10px #3080c149;
+    user-select: none;
+}
+
+.npy_mod_98 .card .img-container {
+    display: flex;
+    overflow: hidden;
     position: relative;
-    box-shadow: 0px 15px 35px #3080c149;
-}
-.card .text {
     flex: 1;
-    padding: 20px;
-    background-color: white;
 }
-.card .text ion-icon{
+
+.npy_mod_98 .card .text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    flex-basis: 30%;
+}
+
+.npy_mod_98 .card .text ion-icon{
     font-size: 13px;
     margin-right: 5px;
 }
-.img-container {
+
+.npy_mod_98 .img-slider {
     display: flex;
     overflow: hidden;
-    flex-basis: 70%;
-    position: relative;
-    width: 100%;
 }
-.img-slider {
+.npy_mod_98 .img-slider div{
+    min-width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    width: 100%;
 }
-img {
-    width: 100%;
-    height: auto;
+.npy_mod_98 .img-slider div img{
+    min-width: 100%;
+    min-height: 100%;
     object-fit: cover;
+
+}
+.npy_mod_98 .img-slider {
+    scroll-snap-type: x mandatory;
+}
+  
+.npy_mod_98 .img-slider div {
+    scroll-snap-align: start; 
 }
 
-/* .landscape {
-    width: auto;
-    height: 100%;
-} */
-
-.arrows {
+.npy_mod_98 .arrows {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -112,82 +134,296 @@ img {
     transform: translateY(-50%);
     color: rgba(255, 255, 255, .8);
 }
-.arrows ion-icon {
+.npy_mod_98 .btnLeft:hover,
+.npy_mod_98 .btnRight:hover{
+    color: white;
+    scale: 1.1;
+}
+.npy_mod_98 .cards-container:hover .card:not(:hover){
+    opacity: .5;
+}
+.npy_mod_98 .arrows ion-icon {
     cursor: pointer;
-    font-size: 32px;
-}
-
-.navList {
-    position: absolute;
-    width: 100%;
-    background-color: grey;
-    list-style: none;
-    text-align: center;
-    scale: 0;
-}
-.navList.active{
-    scale: 1;
-}
-.navList a{
     font-size: 40px;
 }
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-#menu {
-    cursor: pointer;
-}
+
 
 @media only screen and (max-width: 1240px) {
-    #container {
-        padding-inline: 10%;
-    }
-    .card {
-        min-width: 250px;
-        width: 250px;
-        flex: calc(50% - 15px);
-    }
-    .cards-container{
-        flex-wrap: wrap;
-        display: flex;
-        width: 100%;
-    }
     nav button{
         display: none;
     }
 
-    .text-content {
-        width: 80%;
-    }
 
   }
 
   @media only screen and (max-width: 768px) {
-    .card {
-        width: 100%;
-        height: 450px;
-    }
-    .text-content {
-        width: 100%;
-    }
   }
 
-
-#test {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(253, 5, 5);
-    margin: 100px auto ;
+  .npy_mod_99 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin: 200px 0;
+    padding: 10px;
+  }
+  .npy_mod_99 .upper {
+    width: 1240px;
+    margin-inline: auto;
+  }
+  .npy_mod_99 .upper h3 {
+    margin-bottom: 30px;
+  }
+  .npy_mod_99 .lower {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+  }
+  .npy_mod_99 ion-icon {
+    color: white;
+  }
+  .npy_mod_99 .card-wide {
+    display: flex;
     overflow: hidden;
+    width: 850px;
+    height: 320px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px 5px #3080c149;
+  }
+  /* image carousel */
+    .npy_mod_99 .img-slider {
+        scroll-snap-type: x mandatory;
+    }
+
+    .npy_mod_99 .img-slider div {
+        scroll-snap-align: start; 
+    }
+  .npy_mod_99 .card-wide .img-container {
+    flex-basis: 45%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .npy_mod_99 .img-slider{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+  .npy_mod_99 .img-slider div{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+  }
+  .npy_mod_99 .img-slider img{
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+  /* like and left/right arrows  */
+  .npy_mod_99 .card-wide .arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5%;
+  }
+  .npy_mod_99 .like {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+  }
+  .npy_mod_99 .arrows ion-icon {
+    opacity: .7;
+  }
+  .npy_mod_99 .arrows .btnLeft:hover,
+  .npy_mod_99 .arrows .btnRight:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  /* card description */
+  .npy_mod_99 .card-wide .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .npy_mod_99 .description p:last-child{
+    background-color: rgba(0, 47, 108, .1);
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .npy_mod_99 .rating{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .npy_mod_99 .rating p:first-child,
+  .npy_mod_99 .rating p:last-child{
+    color: #2A8E48;
+    background-color:rgba(42, 142, 72, .3);
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 500;
+  }
+
+  .npy_mod_99 .rating ion-icon {
+    font-size: 16px;
+    color: var(--dark-blue);
+  }
+
+  /* lower container */
+.npy_mod_99 .options {
+    width: 300px;
+    margin-right: 100px;
+    padding-left: 50px;
+}
+.npy_mod_99 .options input{
+    width: 25px;
+    height: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.npy_mod_99 .options input[type="checkbox"]{
+    accent-color: #7bff9a;
+}
+.npy_mod_99 .options p{
+    font-weight: 500;
+}  
+.npy_mod_99 .options form label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.npy_mod_99 .lower .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.npy_mod_99 .map{
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.npy_mod_99 .map.active iframe{
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    width: 795px;
+    border-radius: 10px;
+}
+.npy_mod_99 .map iframe {
+    width: 100%;
+    height: 900px;
+}
+.npy_mod_99 .upper .select {
+    position: relative;
+    z-index: 10;
+    width: fit-content;
+    height: 75px;
+}
+.npy_mod_99 .upper .select.active ul{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+.npy_mod_99 .upper .select.active ul {
+    justify-content: center;
 }
 
-#test img {
-    /* width: 100%; */
-    height: 100%;
-    object-fit: cover;
+.npy_mod_99 .select ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 75px;
+    background-color: white;
+    box-shadow: 0px 10px 55px #3B8BDB2B;
+    border-radius: 15px;
 }
+.npy_mod_99 .select ul li {
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    border-right: 1px solid #E7F0FA;
+    height: 70%;
+    font-weight: 700;
+    position: relative;
+    user-select: none;
+}
+/* .npy_mod_99 .select ul li.active {
+    border-bottom: 10px solid #FFF1E6;
+} */
+.npy_mod_99 .select ul li:nth-last-child(2),
+.npy_mod_99 .select ul li:last-child,
+.npy_mod_99 .select ul li:nth-child(3)
+ {
+    border-right: none;
+}
+
+.npy_mod_99 .select .list-dropdown {
+    position: absolute;
+    height: 400px;
+    width: 70%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px  15px 25px 15px #3080c149;
+    z-index: 500;
+    scale: 0;
+}
+/* .npy_mod_99 .select.active .list-dropdown {
+    position: fixed;
+    top: 75px;
+    height: 400px;
+    width: 800px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px  15px 25px 15px #3080c149;
+    z-index: 500;
+    scale: 0;
+} */
+.npy_mod_99 .select ion-icon{
+    color: black;
+    font-size: 16px;
+    margin-right: 7px;
+}
+.npy_mod_99 .select .list-dropdown.active {
+    scale: 1;
+}
+
+
+.npy_mod_99 .select button {
+    all: unset;
+    background-color: #F96B00;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.npy_mod_100 {
+    width: 1240px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 3000px;
+}
+
+
+
+

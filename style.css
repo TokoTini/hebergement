@@ -114,7 +114,6 @@ header ion-icon {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-
 }
 .npy_mod_98 .img-slider {
     scroll-snap-type: x mandatory;
@@ -235,9 +234,13 @@ header ion-icon {
   .npy_mod_99 .like {
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
+    top: 5%;
+    left: 5%;
   }
+  .npy_mod_99 .like ion-icon{
+    font-size: 40px;
+  }
+
   .npy_mod_99 .arrows ion-icon {
     opacity: .7;
   }
@@ -316,6 +319,11 @@ header ion-icon {
     flex: 1;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
+}
+.npy_mod_99 .map.bottom iframe{
+    position: absolute;
+    bottom: 0;
 }
 .npy_mod_99 .map.active iframe{
     position: fixed;
@@ -385,17 +393,19 @@ header ion-icon {
     z-index: 500;
     scale: 0;
 }
-/* .npy_mod_99 .select.active .list-dropdown {
+.npy_mod_99 .select.active .list-dropdown {
     position: fixed;
     top: 75px;
     height: 400px;
-    width: 800px;
-    border-radius: 10px;
+    width: 100%;
+    left: 0;
+    border-radius: 0px;
     background-color: white;
-    box-shadow: 0px  15px 25px 15px #3080c149;
+    border-top: 3px solid #3080c149;
+    box-shadow: 0px 50px 30px 10px #3080c149;
     z-index: 500;
     scale: 0;
-} */
+}
 .npy_mod_99 .select ion-icon{
     color: black;
     font-size: 16px;

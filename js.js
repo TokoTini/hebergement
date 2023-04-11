@@ -51,13 +51,13 @@ gsap.to('.select',{
         trigger: ".lower",
         start: "top 10%",
         end: "bottom 75%",
-        toggleActions: "",
         toggleClass: { className: "active", targets: ".select" },
-        markers: {
-            startColor: 'black',
-            endColor: "blue",
-            fontSize: '1.75rem',
-        },
+        // toggleActions: "",
+        // markers: {
+        //     startColor: 'black',
+        //     endColor: "blue",
+        //     fontSize: '1.75rem',
+        // },
     }
 })
 
@@ -65,13 +65,28 @@ gsap.to('.map',{
     scrollTrigger: {
         trigger: ".lower",
         start: "top 10%",
-        end: "bottom 75%",
-        toggleActions: "",
+        end: "bottom 90%",
         toggleClass: { className: "active", targets: ".map" },
+        toggleActions: "resume none none none",
+        // markers: {
+        //     startColor: 'yellow',
+        //     endColor: "pink",
+        //     fontSize: '1.75rem',
+        // },
+    }
+})
+
+gsap.to('.map',{
+    scrollTrigger: {
+        trigger: ".lower",
+        start: "bottom 95%",
+        end: "bottom .1%",
+        toggleClass: { className: "bottom", targets: ".map" },
         markers: {
-            startColor: 'yellow',
-            endColor: "pink",
+            startColor: 'purple',
+            endColor: "brown",
             fontSize: '1.75rem',
         },
     }
 })
+

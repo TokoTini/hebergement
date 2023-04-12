@@ -149,9 +149,6 @@ header ion-icon {
 }
  /* mod 98 media queries */
 @media only screen and (max-width: 768px) {
-    .npy_mod_100 {
-        transform: scale(0);
-    }
     .npy_mod_98 {
         width: 100%;
     }
@@ -198,7 +195,7 @@ header ion-icon {
     flex-direction: column;
     gap: 50px;
     width: 100%;
-    margin: 200px 0;
+    margin: 100px 0;
     padding: 10px;
   }
   .npy_mod_99 .upper {
@@ -468,6 +465,42 @@ header ion-icon {
     cursor: pointer;
     display: none;
 }
+
+.npy_mod_99 .optionsSort{
+    width: 90%;
+    margin-inline: auto;
+    display: none;
+}
+.npy_mod_99 .optionsSort h3 {
+    margin-bottom: 20px;
+}
+.npy_mod_99 .optionsSort ul{
+
+    display: flex;
+    list-style: none;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3B8BDB2B;
+    border-radius: 10px;
+}
+.npy_mod_99 .optionsSort ul li {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    border-right: 1px solid #3B8BDB2B;
+}
+.npy_mod_99 .optionsSort ul li:last-child{
+    border: none;
+}
+.npy_mod_99 .optionsSort ion-icon {
+    color: black;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
 /* mod 99 media queries */
 @media only screen and (max-width: 768px) {
     .npy_mod_99 {
@@ -560,7 +593,19 @@ header ion-icon {
         min-height: 100%;
         object-fit: cover;
     }
+    .npy_mod_99 .like {
+        top: 5%;
+        right: 5%;
+        left: auto;
+    }
+    .npy_mod_99 .optionsSort{
+        display: block;
+    }
 }
+
+
+
+
 .npy_mod_100 {
     width: 1240px;
     margin-inline: auto;
@@ -568,6 +613,13 @@ header ion-icon {
     flex-direction: column;
     gap: 30px;
     margin-bottom: 3000px;
+}
+/* mod 100 media queries */
+@media only screen and (max-width: 768px) {
+    .npy_mod_100 {
+        width: 100%;
+        padding-inline: 5%;
+    }
 }
 
 

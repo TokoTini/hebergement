@@ -38,11 +38,19 @@ leftButtons.forEach(function(leftButton){
 
 let stations = document.querySelector(".station");
 let stationsDropdown = document.querySelector(".station-dropdown");
-let closeStations = document.querySelector(".close-stations");
+let closeBtn = document.querySelectorAll(".closeBtn");
 
-closeStations.addEventListener('click', () => {
-    stationsDropdown.classList.remove('active');
+// closeModal.addEventListener('click', () => {
+//     closeModal.closest('.modal').classList.remove('active');
+// })
+
+closeBtn.forEach(function(close){
+    close.addEventListener('click', function(){
+        close.closest('.modal').classList.remove('active');
+    })
 })
+
+
 
 stations.addEventListener('click', () => {
     stations.classList.toggle('active')

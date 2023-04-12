@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins";
 }
 body{
     overflow-x: hidden;
@@ -138,25 +143,55 @@ header ion-icon {
     color: white;
     scale: 1.1;
 }
-.npy_mod_98 .cards-container:hover .card:not(:hover){
-    opacity: .5;
-}
 .npy_mod_98 .arrows ion-icon {
     cursor: pointer;
     font-size: 40px;
 }
-
-
-@media only screen and (max-width: 1240px) {
-    nav button{
-        display: none;
+ /* mod 98 media queries */
+@media only screen and (max-width: 768px) {
+    .npy_mod_100 {
+        transform: scale(0);
+    }
+    .npy_mod_98 {
+        width: 100%;
+    }
+    .npy_mod_98 .text-content,
+    .npy_mod_98 .carousel > h3,
+    .npy_mod_98 .cards-container {
+        padding-left: 5%;
+    }
+    .npy_mod_98 h1,
+    .npy_mod_98 h3 {
+        font-weight: 900;
+    }
+    .npy_mod_98 .text-content {
+        width: 95%;
+        gap: 50px;
+        margin-bottom: 25px;
+    }
+    .npy_mod_98 .text-content h1{
+        width: 50%;
+        margin-bottom: 25px;
+    }
+    .npy_mod_98 .cards-container {
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        gap: 20px;
+        overflow-x: scroll;
+    }
+    .npy_mod_98 .cards-container .card {
+        min-width: 85%;
+        height: 450px;
+        box-shadow: 0px  0px 25px 10px #3080c149;
+    }
+    
+    .npy_mod_98 .cards-container .card .text {
+        padding: 5px 25px;
+        justify-content: space-evenly;
     }
 
-
-  }
-
-  @media only screen and (max-width: 768px) {
-  }
+}
 
   .npy_mod_99 {
     display: flex;
@@ -288,8 +323,8 @@ header ion-icon {
 
   /* lower container */
 .npy_mod_99 .options {
-    width: 300px;
-    margin-right: 100px;
+    width: 250px;
+    margin-right: 50px;
     padding-left: 50px;
 }
 .npy_mod_99 .options input{
@@ -329,12 +364,12 @@ header ion-icon {
     position: fixed;
     top: 80px;
     right: 10px;
-    width: 795px;
-    border-radius: 10px;
+    width: 682px;
+    border-radius: 15px;
 }
 .npy_mod_99 .map iframe {
-    width: 100%;
-    height: 900px;
+    width: 700px;
+    height: 700px;
 }
 .npy_mod_99 .upper .select {
     position: relative;
@@ -373,17 +408,19 @@ header ion-icon {
     position: relative;
     user-select: none;
 }
+.npy_mod_99 .select ul li span {
+    margin-left: 50px;
+}
 /* .npy_mod_99 .select ul li.active {
     border-bottom: 10px solid #FFF1E6;
 } */
 .npy_mod_99 .select ul li:nth-last-child(2),
-.npy_mod_99 .select ul li:last-child,
-.npy_mod_99 .select ul li:nth-child(3)
+.npy_mod_99 .select ul li:last-child
  {
     border-right: none;
 }
 
-.npy_mod_99 .select .list-dropdown {
+.npy_mod_99 .select .station-dropdown {
     position: absolute;
     height: 400px;
     width: 70%;
@@ -393,7 +430,7 @@ header ion-icon {
     z-index: 500;
     scale: 0;
 }
-.npy_mod_99 .select.active .list-dropdown {
+.npy_mod_99 .select.active .station-dropdown {
     position: fixed;
     top: 75px;
     height: 400px;
@@ -411,7 +448,7 @@ header ion-icon {
     font-size: 16px;
     margin-right: 7px;
 }
-.npy_mod_99 .select .list-dropdown.active {
+.npy_mod_99 .select .station-dropdown.active {
     scale: 1;
 }
 
@@ -424,7 +461,106 @@ header ion-icon {
     color: white;
     cursor: pointer;
 }
+.npy_mod_99 .select .station-dropdown ion-icon {
+    position: absolute;
+    right: 0;
+    font-size: 48px;
+    cursor: pointer;
+    display: none;
+}
+/* mod 99 media queries */
+@media only screen and (max-width: 768px) {
+    .npy_mod_99 {
+        width: 100%;
+    }
+    .npy_mod_99 .upper {
+        width: 100%;
+        padding: 5%;
+    }
+    .npy_mod_99 .upper .select {
+        width: 100%;
+        height: fit-content;
+        position: static;
+    }
+    .npy_mod_99 .select ul{
+        /* flex-direction: column; */
+        flex-direction: column;
+        margin-inline: auto;
+        height: 500px;
+        align-items: flex-start;
+    }
+    .npy_mod_99 .select ul li {
+        border-right: none;
+        justify-content: flex-start;
+        width: 80%;
+        margin-inline: auto;
+        padding: 30px 0;
+        border-bottom: 1px solid #3B8BDB2B;
+    }
+    .npy_mod_99 .select li:nth-last-child(2),
+    .npy_mod_99 .select li:last-child {
+        border-bottom: none;
+    }
+    .npy_mod_99 .select ul li span {
+        margin-left: auto;
+    }
+    .npy_mod_99 .select ul li button {
+        width: 100%;
+        margin-inline: auto;
+        height: 50px;
+        text-align: center;
+    }
+    .npy_mod_99 .select .station-dropdown.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+        border-radius: 0;
+    }
+    .npy_mod_99 .select .station-dropdown ion-icon {
+        display: flex;
+    }
+    .npy_mod_99 .options,
+    .npy_mod_99 .map{
+        display: none;
+    }
+    .npy_mod_99 .lower .cards{
+        width: 100%;
+        overflow: hidden;
+        padding: 30px 0;
+    }
+    .npy_mod_99 .cards .card-wide {
+        flex-direction: column;
+        width: 90%;
+        margin-inline: auto;
+        height: fit-content;
+    }
+    .npy_mod_99 .card-wide .description {
+        justify-content: space-between;
+    }
 
+    .npy_mod_99 .card-wide .img-container {
+        width: 100%;
+        flex-basis: 60%;
+    }
+    .npy_mod_99 .img-slider{
+        height: 100%;
+        width: 100%;
+    }
+    .npy_mod_99 .img-slider div{
+        min-height: 100%;
+        min-width: 100%;
+    }
+    .npy_mod_99 .img-slider > img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
 .npy_mod_100 {
     width: 1240px;
     margin-inline: auto;

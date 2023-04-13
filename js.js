@@ -40,9 +40,6 @@ let stations = document.querySelector(".station");
 let stationsDropdown = document.querySelector(".station-dropdown");
 let closeBtn = document.querySelectorAll(".closeBtn");
 
-// closeModal.addEventListener('click', () => {
-//     closeModal.closest('.modal').classList.remove('active');
-// })
 
 closeBtn.forEach(function(close){
     close.addEventListener('click', function(){
@@ -53,76 +50,12 @@ closeBtn.forEach(function(close){
 
 
 stations.addEventListener('click', () => {
-    stations.classList.toggle('active')
     stationsDropdown.classList.toggle('active')
 })
 
 
 gsap.registerPlugin(ScrollTrigger);
 
-// gsap.to('.select',{
-//     scrollTrigger: {
-//         trigger: ".lower",
-//         start: "top 10%",
-//         end: "bottom 5%",
-//         toggleClass: { className: "active", targets: ".select" },
-//         toggleActions: "",
-//         // markers: {
-//         //     startColor: 'black',
-//         //     endColor: "blue",
-//         //     fontSize: '1.75rem',
-//         // },
-//     }
-// })
-
-
-// mm.add("(min-width: 1400px)", () => {
-//     gsap.to('.map',{
-//         scrollTrigger: {
-//             trigger: ".lower",
-//             start: "bottom 80%",
-//             end: "bottom .1%",
-//             toggleClass: { className: "bottom", targets: ".map" },
-//             // markers: {
-//             //     startColor: 'purple',
-//             //     endColor: "brown",
-//             //     fontSize: '1.75rem',
-//             // },
-//         }
-//     }),
-//     gsap.to('.map',{
-//         scrollTrigger: {
-//             trigger: ".lower",
-//             start: "top 7%",
-//             end: "bottom 80%",
-//             toggleClass: { className: "active", targets: ".map" },
-//             toggleActions: "resume none none none",
-//             // markers: {
-//             //     startColor: 'yellow',
-//             //     endColor: "pink",
-//             //     fontSize: '1.75rem',
-//             // },
-//         }
-//     }),
-//     gsap.to('.select',{
-//         scrollTrigger: {
-//             trigger: ".lower",
-//             start: "top 10%",
-//             end: "bottom 5%",
-//             toggleClass: { className: "active", targets: ".select" },
-//             toggleActions: "",
-//             // markers: {
-//             //     startColor: 'black',
-//             //     endColor: "blue",
-//             //     fontSize: '1.75rem',
-//             // },
-//         }
-//     })
-// });
-
-
-
-ScrollTrigger.saveStyles(".mobile, .desktop");
 
 /*** Different ScrollTrigger setups for various screen sizes (media queries) ***/
 ScrollTrigger.matchMedia({

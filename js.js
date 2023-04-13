@@ -54,6 +54,14 @@ stations.addEventListener('click', () => {
 })
 
 
+let listItems = document.querySelectorAll('.modal-options ul li');
+listItems.forEach(li => {
+    li.addEventListener('click', () => {
+        li.classList.toggle('active');
+    })
+})
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 

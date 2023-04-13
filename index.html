@@ -137,28 +137,40 @@
                 <div class="select">
                     <ul>
                         <li class="station"><ion-icon name="triangle-outline"></ion-icon>Station</li>
-                        <li><ion-icon name="home-outline"></ion-icon>Catégorie</li>
+                        <li class="category"><ion-icon name="home-outline"></ion-icon>Catégorie</li>
                         <li><ion-icon name="calendar-outline"></ion-icon>Arrivée <span><ion-icon name="arrow-forward-outline"></ion-icon><ion-icon name="calendar-outline"></ion-icon>Départ</span></li>
                         <li><ion-icon name="person-outline"></ion-icon>4 personnes</li>
                         <li><button>Rechercher</button>
                     </ul>
                     <div class="station-dropdown modal">
                         <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                        <div class="modal-options">
+                            <ul>
+                                <li>Toutes destinations</li>
+                                <li>Piau Engaly</li>
+                                <li>Peyragudes</li>
+                                <li>Luz-Ardiden</li>
+                                <li>La Pierre St Martin</li>
+                                <li>Grand Tourmalet</li>
+                                <li>Gourette</li>
+                                <li>Cauterets</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="optionsSort">
                 <h3>3930 résultats</h3>
                 <ul>
-                    <li><ion-icon name="funnel-outline"></ion-icon>Filter</li>
-                    <li><ion-icon name="funnel-outline"></ion-icon>Trier</li>
-                    <li><ion-icon name="map-outline"></ion-icon>Carte</li>
+                    <li class="filter"><ion-icon name="funnel-outline"></ion-icon>Filter</li>
+                    <li class="trier"><ion-icon name="funnel-outline"></ion-icon>Trier</li>
+                    <li class="carte"><ion-icon name="map-outline"></ion-icon>Carte</li>
                 </ul>
             </div>
             <div class="lower">
                 <!-- classement/options -->
                 <div class="options">
-                    <form action="/action_page.php">
+                    <form>
                         <h3>Classement</h3>
                         <label>3 clefs / épis /étoiles<input type="checkbox" id="" name="" value=""></label>
                         <label>3 clefs / épis /étoiles<input type="checkbox" id="" name="" value=""></label>
@@ -175,7 +187,7 @@
                         <label>Lave-linge<input type="checkbox" id="" name="" value=""></label>
                         <label>Animaux acceptés<input type="checkbox" id="" name="" value=""></label>
                         <label>Balcon/ terrasse<input type="checkbox" id="" name="" value=""></label>
-                      </form>
+                    </form>
                 </div>
                 <!-- cards -->
                 <div class="cards">
@@ -458,6 +470,9 @@
             <p> L'offre d'hébergement, c'est d'abord des hôtels de toutes catégories. C'est aussi des appartements à louer, des chalets, des gîtes. Quand viennent les beaux jours et la saison estivale, profitez également de l'hébergement de plein air, en camping ou village vacances.</p>
             <p>Réserver votre hébergement de ski sur N'PY c'est profiter du meilleur prix garanti dans les stations des Pyrénées !</p>
         </section>
+        <div class="testt">
+            <input type="checkbox">
+        </div>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>

@@ -41,22 +41,37 @@ let stationsDropdown = document.querySelector(".station-dropdown");
 let closeBtn = document.querySelectorAll(".closeBtn");
 
 
+
+// close modal and enable scroll on body element
 closeBtn.forEach(function(close){
+    let body = document.querySelector('body');
     close.addEventListener('click', function(){
         close.closest('.modal').classList.remove('active');
+        body.classList.remove('disabled');
     })
 })
 
 
-
+// open stations modal and disable scroll on body element
 stations.addEventListener('click', () => {
     stationsDropdown.classList.toggle('active')
+    let body = document.querySelector('body')
+    if(stationsDropdown.classList.contains('active')){
+        body.classList.add('disabled');
+    }else {
+        body.classList.remove('disabled');
+    }
 })
 
 
-let listItems = document.querySelectorAll('.modal-options ul li');
+let listItems = document.querySelectorAll('.station-options ul li');
+let listCheckbox = document.querySelectorAll('.station-options ul li form input');
+
 listItems.forEach(li => {
     li.addEventListener('click', () => {
+        listItems.forEach(function(item){
+            item.classList.remove('active');
+        })
         li.classList.toggle('active');
     })
 })

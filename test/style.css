@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+
+.npy_mod_99 {
+    margin-top: 200px;
+    width: 100%;
+}
+.npy_mod_99 .upper{
+    width: 1240px;
+    margin-inline: auto;
+}
+
+/* primary list 
+station/categorie/date/personnes */
+.npy_mod_99 .upper .select .primary{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 70px;
+    list-style: none;
+    border-radius: 10px;
+    box-shadow: 0px  0px 25px 10px #3080c149;
+}
+
+.npy_mod_99 .upper .select .primary > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    padding: 10px 50px;
+    border-right: 1px solid #3080c149;
+}
+
+.npy_mod_99 .upper .select ul li:last-child,
+.npy_mod_99 .upper .select ul li:nth-last-child(2){
+    border: none;
+}
+.npy_mod_99 .upper .select .primary button{
+    all: unset;
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+/* dropdowns */
+.npy_mod_99 .primary li.active .dropdown {
+    display: block;
+    border-top: 3px solid orange;
+}
+.npy_mod_99 .dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    display: none;
+}
+
+.npy_mod_99 .dropdown ul{
+    list-style: none;
+    line-height: 40px;
+    background-color: #3080c149;
+}
+.npy_mod_99 .dropdown ul li.active{
+    background-color: #fff;
+}
+.npy_mod_99 .dropdown ul li .secondary {
+    display: none;
+    width: 500px;
+    height: 100%;
+    overflow-y: auto;
+    padding-left: 25px;
+    word-wrap: break-word;
+    background-color: white;
+}
+.npy_mod_99 .dropdown ul li.active .secondary {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.npy_mod_99 .dropdown .secondary{
+    position: absolute;
+    top: 0;
+    left: 100%;
+}

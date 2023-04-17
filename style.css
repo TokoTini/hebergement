@@ -346,7 +346,7 @@ body{
     width: fit-content;
     height: 75px;
 }
-.npy_mod_99 .upper .select.active ul{
+.npy_mod_99 .upper .select.active > ul{
     position: fixed;
     width: 100vw;
     top: 0;
@@ -391,7 +391,7 @@ body{
 
 .npy_mod_99 .select .station-dropdown {
     position: absolute;
-    width: 70%;
+    /* width: 70%; */
     border-radius: 6px;
     background-color: white;
     box-shadow: 0px  15px 25px 15px #3080c149;
@@ -399,11 +399,11 @@ body{
     scale: 0;
 }
 .npy_mod_99 .select.active .station-dropdown {
+    display: table;
     position: fixed;
     top: 75px;
     left: 0;
     width: 100%;
-    height: 500px;
     border-radius: 0px;
     background-color: white;
     border-top: 3px solid #3080c149;
@@ -423,7 +423,7 @@ body{
 }
 .npy_mod_99  .station-options {
     display: flex;
-    gap: 30px;
+    margin-inline: auto;
 }
 .npy_mod_99   .station-options ul {
     position: relative;
@@ -432,7 +432,7 @@ body{
 .npy_mod_99 .station-dropdown .controls{
     display: none;
 }
-.npy_mod_99   .station-options ul li{
+.npy_mod_99 .station-options ul li{
     width: 100%;
     background-color: #3080c149;
     height: max-content;
@@ -447,12 +447,15 @@ body{
 }
 .npy_mod_99  .station-options ul li form {
     display: none;
-    width: max-content;
+    width: 500px;
+    background-color: white;
 }
 .npy_mod_99  .station-options ul li.active form {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    height: 100%;
+    overflow-y: auto;
     padding-left: 25px;
     left: 100%;
     top: 0;

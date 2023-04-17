@@ -6,11 +6,29 @@
     font-family: "Poppins";
 }
 
+input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    font: inherit;
+    color: currentColor;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+input[type="radio"]:checked {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    font: inherit;
+    background: #7bff9a;
+}
 
 .npy_mod_99 {
     margin-top: 200px;
     width: 100%;
 }
+
 .npy_mod_99 .upper{
     width: 1240px;
     margin-inline: auto;
@@ -18,31 +36,40 @@
 
 /* primary list 
 station/categorie/date/personnes */
-.npy_mod_99 .upper .select .primary{
+.npy_mod_99 .upper  .primary{
     display: flex;
     align-items: center;
     width: fit-content;
+    /* position: relative; */
+    height: 100%;
     height: 70px;
     list-style: none;
     border-radius: 10px;
     box-shadow: 0px  0px 25px 10px #3080c149;
 }
+.npy_mod_99 .upper  .primary.active{
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    border-radius: 0;
+    justify-content: center;
+}
 
-.npy_mod_99 .upper .select .primary > li{
+.npy_mod_99 .upper  .primary > li{
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     height: 100%;
-    padding: 10px 50px;
+    width: 200px;
     border-right: 1px solid #3080c149;
 }
 
-.npy_mod_99 .upper .select ul li:last-child,
-.npy_mod_99 .upper .select ul li:nth-last-child(2){
+.npy_mod_99 .upper  ul li:last-child,
+.npy_mod_99 .upper  ul li:nth-last-child(2){
     border: none;
 }
-.npy_mod_99 .upper .select .primary button{
+.npy_mod_99 .upper  .primary button{
     all: unset;
     background-color: orange;
     padding: 10px 20px;
@@ -53,8 +80,8 @@ station/categorie/date/personnes */
 /* dropdowns */
 .npy_mod_99 .primary li.active .dropdown {
     display: block;
-    border-top: 3px solid orange;
 }
+
 .npy_mod_99 .dropdown {
     position: absolute;
     top: 100%;
@@ -63,10 +90,11 @@ station/categorie/date/personnes */
     background-color: white;
     display: none;
 }
-
 .npy_mod_99 .dropdown ul{
     list-style: none;
     line-height: 40px;
+}
+.npy_mod_99 .dropdown ul li{
     background-color: #3080c149;
 }
 .npy_mod_99 .dropdown ul li.active{
@@ -85,10 +113,28 @@ station/categorie/date/personnes */
     display: flex;
     flex-direction: column;
 }
-
+.npy_mod_99 .category form.dropdown {
+    display: flex;
+    flex-direction: column;
+}
 
 .npy_mod_99 .dropdown .secondary{
     position: absolute;
     top: 0;
     left: 100%;
 }
+
+/* category dropdown */
+
+.npy_mod_99 .dropdown > form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 0 10px;
+}
+
+.npy_mod_99 .personnes .dropdown > div {
+    padding: 15px;
+}
+

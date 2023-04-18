@@ -36,40 +36,34 @@ leftButtons.forEach(function(leftButton){
 })
 
 
-let stations = document.querySelector(".station");
-let stationsDropdown = document.querySelector(".station-dropdown");
-let closeBtn = document.querySelectorAll(".closeBtn");
+let mainList = document.querySelectorAll('.primary > li');
+let closeBtn = document.querySelectorAll('.closeBtn');
+mainList.forEach(li => {
+    li.addEventListener('click', (e) => {
+        // e.stopPropagation()
+        mainList.forEach(function(item) {
+            item.classList.remove('active');
+        })
+        li.classList.toggle('active');
+    })
+})
 
-
-
-// close modal and enable scroll on body element
-closeBtn.forEach(function(close){
-    let body = document.querySelector('body');
-    close.addEventListener('click', function(){
-        close.closest('.modal').classList.remove('active');
-        body.classList.remove('disabled');
+closeBtn.forEach(btn => {
+    btn.addEventListener('click', (e) =>{
+        e.stopPropagation()
+        let parentDiv = e.target.closest('li');
+        parentDiv.classList.remove('active')
     })
 })
 
 
-// open stations modal and disable scroll on body element
-stations.addEventListener('click', () => {
-    stationsDropdown.classList.toggle('active')
-    let body = document.querySelector('body')
-    if(stationsDropdown.classList.contains('active')){
-        body.classList.add('disabled');
-    }else {
-        body.classList.remove('disabled');
-    }
-})
 
+let secondaryList = document.querySelectorAll('.dropdown ul li')
 
-let listItems = document.querySelectorAll('.station-options ul li');
-let listCheckbox = document.querySelectorAll('.station-options ul li form input');
-
-listItems.forEach(li => {
-    li.addEventListener('click', () => {
-        listItems.forEach(function(item){
+secondaryList.forEach(li => {
+    li.addEventListener('click', (e) => {
+        // e.stopPropagation()
+        secondaryList.forEach(function(item) {
             item.classList.remove('active');
         })
         li.classList.toggle('active');
@@ -77,22 +71,44 @@ listItems.forEach(li => {
 })
 
 
+let personnesInput = document.querySelector('.personnes .number p')
+let personnes = document.querySelector('.personnes > p');
+let plusBtn = document.querySelector('.plus')
+let minusBtn = document.querySelector('.minus')
+
+
+let n = 4;
+plusBtn.addEventListener('click', () => {
+    n++;
+    personnesInput.innerHTML = n +" " + "Personnes";
+    personnes.innerHTML = n + " " + "Personnes";
+})
+
+minusBtn.addEventListener('click', () => {
+    if(n > 1){
+        n--;
+    }else{
+        n = 1;
+    }
+    let person = n > 1 ? "Personnes" : "Personne";
+    personnesInput.innerHTML = n +" "+ person;
+    personnes.innerHTML = n +" "+ person;
+})
+
+
 gsap.registerPlugin(ScrollTrigger);
-
-
 /*** Different ScrollTrigger setups for various screen sizes (media queries) ***/
 ScrollTrigger.matchMedia({
   // desktop
   "(min-width: 800px)": function() {
     // setup animations and ScrollTriggers for screens over 800px wide (desktop) here...
     // ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
-    gsap.to('.select',{
+    gsap.to('.primary',{
         scrollTrigger: {
             trigger: ".lower",
             start: "top 10%",
             end: "bottom 5%",
-            toggleClass: { className: "active", targets: ".select" },
-            toggleActions: "",
+            toggleClass: { className: "active", targets: ".primary" },
             // markers: {
             //     startColor: 'black',
             //     endColor: "blue",

@@ -8,18 +8,18 @@
 
 input[type="radio"] {
     appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     font: inherit;
     color: currentColor;
-    border: 3px solid currentColor;
+    border: 1px solid currentColor;
     border-radius: 50%;
     margin-right: 5px;
 }
 input[type="radio"]:checked {
     appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     font: inherit;
     background: #7bff9a;
 }
@@ -36,17 +36,18 @@ input[type="radio"]:checked {
 
 /* primary list 
 station/categorie/date/personnes */
-.npy_mod_99 .upper  .primary{
+.npy_mod_99 .upper .primary{
     display: flex;
     align-items: center;
     width: fit-content;
-    /* position: relative; */
+    justify-content: center;
     height: 100%;
     height: 70px;
     list-style: none;
     border-radius: 10px;
     box-shadow: 0px  0px 25px 10px #3080c149;
 }
+/* active primary list */
 .npy_mod_99 .upper  .primary.active{
     position: fixed;
     left: 0;
@@ -61,19 +62,22 @@ station/categorie/date/personnes */
     justify-content: center;
     position: relative;
     height: 100%;
-    width: 200px;
+    padding: 0 50px;
     border-right: 1px solid #3080c149;
 }
+.npy_mod_99 .upper  .primary > li:nth-child(3) span{
+    margin-left: 70px;
+}
 
-.npy_mod_99 .upper  ul li:last-child,
-.npy_mod_99 .upper  ul li:nth-last-child(2){
+.npy_mod_99 .upper .primary > li:last-child,
+.npy_mod_99 .upper .primary > li:nth-last-child(2){
     border: none;
 }
 .npy_mod_99 .upper  .primary button{
     all: unset;
-    background-color: orange;
-    padding: 10px 20px;
-    border-radius: 10px;
+    background-color: #F96B00;
+    border-radius: 5px;
+    padding: 10px;
     color: white;
     cursor: pointer;
 }
@@ -125,7 +129,6 @@ station/categorie/date/personnes */
 }
 
 /* category dropdown */
-
 .npy_mod_99 .dropdown > form{
     background-color: white;
     display: flex;
@@ -137,4 +140,113 @@ station/categorie/date/personnes */
 .npy_mod_99 .personnes .dropdown > div {
     padding: 15px;
 }
+.npy_mod_99 .controls,
+.npy_mod_99 .btn{
+    display: none;
+}
 
+@media only screen and (max-width: 768px) {
+    .npy_mod_99 .upper {
+        width: 80%;
+        margin-inline: auto;
+    }
+    .npy_mod_99 .upper .primary {
+        flex-direction: column;
+        padding: 15px 0;
+        border: none;
+    }
+    .npy_mod_99 .upper .primary {
+        position: static;
+        width: 100%;
+        height: max-content;
+    }
+    .npy_mod_99 .upper .primary > li {
+        position: static;
+        width: 80%;
+        justify-content: flex-start;
+        padding: 0;
+        padding: 25px 0;
+        border: none;
+        border-bottom: 1px solid #3080c149;
+        position: static;
+    }
+    .npy_mod_99 .upper .primary li:last-child {
+        justify-content: center;
+    }
+    .npy_mod_99 .upper .primary > li:nth-child(3) span {
+        margin-left: auto;
+    }
+    .npy_mod_99 .upper .primary li:last-child button {
+        text-align: center;
+        width: 100%;
+    }
+    /* active primary list */
+    .npy_mod_99 .upper .primary li.active .dropdown {
+        display: block;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 50;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+    .npy_mod_99 .dropdown ul,
+    .npy_mod_99 .dropdown form,
+    .npy_mod_99 .dropdown > div.number {
+        height: 100%;
+        overflow-y: scroll;
+        background-color: white;
+    }
+    .npy_mod_99 .dropdown ul li{
+        padding: 15px 0;
+        background-color: white;
+        width: 90%;
+        margin-inline: auto;
+        border-bottom: 1px solid #3080c149;
+    }
+    .npy_mod_99 .dropdown ul li p,
+    .npy_mod_99 .dropdown > form{
+        font-weight: 700;
+    }
+    .npy_mod_99 .dropdown ul li:last-child{
+        border: none;
+    }
+    .npy_mod_99 .dropdown ul li p{
+
+        background-color: white;
+    }
+    .npy_mod_99 .dropdown ul li .secondary{
+        position: static;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* previous page, close modal, confirm selection buttons */
+    .npy_mod_99 .btn,
+    .npy_mod_99 .controls {
+        display: flex;
+        align-items: center;
+        height: 70px;
+    }
+    .npy_mod_99 .btn {
+        justify-content: center;
+        border-top: 1px solid #3080c149;
+    }
+    .npy_mod_99 .controls {
+        padding-inline: 25px;
+        justify-content: space-between;
+        border-bottom: 1px solid #3080c149;
+    }
+    .npy_mod_99 .controls ion-icon {
+        font-size: 24px;
+    }
+    .npy_mod_99 .controls p {
+        display: flex;
+        align-items: center;
+    }
+}

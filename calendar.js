@@ -1,14 +1,23 @@
 const options = {
     actions: {
         clickMonth(e, month) {
-          console.log(e,month);
+          console.log(month);
         },
         clickArrow(event, year, month) {
             console.log(year, month);
-          },
-          clickYear(event, year) {
-            console.log(year);
-          },
+        },
+        clickYear(event, year) {
+          console.log(year);
+        },
+        clickWeekNumber(event, number, days, year) {
+          console.log(`Week number: ${number}`);
+          console.log(`Year of the week: ${year}`);
+          console.log('Days of this week:', days);
+        },
+        clickWeekNumber(event, number, days, year) {
+          calendar.settings.selected.dates = days.map((day) => day.dataset.calendarDay);
+          calendar.update();
+        },
     },
     type: 'multiple',
     settings: {
@@ -18,12 +27,6 @@ const options = {
       },
       selection: {
         day: 'multiple-ranged',
-        month: true,
-        year: true,
-      },
-      visibility: {
-        weekend: false,
-        daysOutside: false,
       },
       visibility: {
         theme: 'light',
@@ -36,5 +39,3 @@ const options = {
   };
   const calendar = new VanillaCalendar('#calendar', options);
   calendar.init();
-
-  console.log(calendar.currentType)

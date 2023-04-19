@@ -35,16 +35,28 @@ leftButtons.forEach(function(leftButton){
     })
 })
 
-
+// if(li.classList.contains('active')){
+//     li.classList.remove('active');
+// }else {
+//     mainList.forEach(function(item) {
+//         item.classList.remove('active');
+//     })
+//     li.classList.add('active');
+// }
 let mainList = document.querySelectorAll('.primary > li');
 let closeBtn = document.querySelectorAll('.closeBtn');
 mainList.forEach(li => {
     li.addEventListener('click', (e) => {
-        // e.stopPropagation()
+        e.stopPropagation()
         mainList.forEach(function(item) {
             item.classList.remove('active');
         })
         li.classList.toggle('active');
+        if(li.classList.contains('active')){
+            document.body.classList.add('disabled');
+        }else {
+            document.body.classList.remove('disabled');
+        }
     })
 })
 
@@ -52,7 +64,8 @@ closeBtn.forEach(btn => {
     btn.addEventListener('click', (e) =>{
         e.stopPropagation()
         let parentDiv = e.target.closest('li');
-        parentDiv.classList.remove('active')
+        parentDiv.classList.remove('active');
+        document.body.classList.remove('disabled');
     })
 })
 
@@ -62,7 +75,7 @@ let secondaryList = document.querySelectorAll('.dropdown ul li')
 
 secondaryList.forEach(li => {
     li.addEventListener('click', (e) => {
-        // e.stopPropagation()
+        e.stopPropagation()
         secondaryList.forEach(function(item) {
             item.classList.remove('active');
         })
@@ -96,6 +109,19 @@ minusBtn.addEventListener('click', () => {
 })
 
 
+let mapBtn = document.querySelector('.carte');
+let map = document.querySelector('.map');
+let closeMap = document.querySelector('.closeMap');
+
+mapBtn.addEventListener('click',() =>{
+    map.classList.add('full');
+    document.body.classList.add('disabled');
+})
+closeMap.addEventListener('click', () =>{
+    map.classList.remove('full')
+    document.body.classList.remove('disabled');
+})
+
 gsap.registerPlugin(ScrollTrigger);
 /*** Different ScrollTrigger setups for various screen sizes (media queries) ***/
 ScrollTrigger.matchMedia({
@@ -110,7 +136,7 @@ ScrollTrigger.matchMedia({
             end: "bottom 5%",
             toggleClass: { className: "active", targets: ".primary" },
             // markers: {
-            //     startColor: 'black',
+            //     startColor: 'red',
             //     endColor: "blue",
             //     fontSize: '1.75rem',
             // },

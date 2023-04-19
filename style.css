@@ -14,14 +14,35 @@ body{
 .npy_mod_98 ion-icon {
     font-size: 48px;
 }
+/* general */
+ul {
+    list-style: none;
+}
 .primary-btn{
     all: unset;
     background-color: #F96B00;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     color: white;
     cursor: pointer;
     text-align: center;
+}
+.hide-lg {
+    display: none;
+}
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+input[type="radio"]:checked {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    font: inherit;
+    background: #7bff9a;
 }
 
 /* section npy_mod_100 */
@@ -161,178 +182,415 @@ body{
         height: 450px;
         box-shadow: 0px  0px 25px 10px #3080c149;
     }
-    
+
     .npy_mod_98 .cards-container .card .text {
         padding: 5px 25px;
         justify-content: space-evenly;
     }
 }
-/* mod 99 */
-    .npy_mod_99 {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        width: 100%;
-        margin: 100px 0;
-        padding: 10px;
-    }
-    input[type="radio"] {
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        font: inherit;
-        color: currentColor;
-        border: 1px solid currentColor;
-        border-radius: 50%;
-        margin-right: 5px;
-    }
-    input[type="radio"]:checked {
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        font: inherit;
-        background: #7bff9a;
-    }
-    .npy_mod_99 .upper{
-        width: 1240px;
-        margin-inline: auto;
-        height: 150px;
-    }
+    /* mod 99 */
+.npy_mod_99 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin: 100px 0;
+    padding: 10px;
+}
+/* start upper */
+.npy_mod_99 .upper{
+    width: 1240px;
+    margin-inline: auto;
+    height: 150px;
+}
+.npy_mod_99 .upper > h3 {
+    margin-bottom: 70px;
+}
 
-    .npy_mod_99 .dates .dropdown {
-        width: max-content;
-    }
-    .npy_mod_99 .upper h3 {
-        margin-bottom: 50px;
-      }
-    /* primary list station/categorie/date/personnes */
-    .npy_mod_99 .upper .primary{
-        display: flex;
-        align-items: center;
-        width: max-content;
-        justify-content: center;
-        height: 70px;
-        list-style: none;
-        border-radius: 10px;
-        box-shadow: 0px  0px 25px 10px #3080c149;
-    }
-    .npy_mod_99 .upper  .primary li > p{
-        padding: 0 10px;
-    }
-    .npy_mod_99 .personnes .dropdown .number > p{
-        display: none;
-    }
-    .npy_mod_99 .personnes .dropdown .number > div{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 10px;
-    }
+.npy_mod_99 .upper label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* primary unordered list */
+.npy_mod_99 .primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px  0px 25px 10px #3080c149;
+    z-index: 5;
+}
+.npy_mod_99 .primary.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+.npy_mod_99 .primary ion-icon {
+    margin-right: 7px;
+    color: black;
+}
+/* primary list */
+.npy_mod_99 .primary > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 70%;
+    border-right: 1px solid #3080c149;
+    cursor: pointer;
+}
+.npy_mod_99 .primary > li p{
+    font-weight: 700;
+}
+.npy_mod_99 .primary > li:nth-last-child(1),
+.npy_mod_99 .primary > li:nth-last-child(2){
+    border-right: none;
+}
+.npy_mod_99 .primary > li:nth-child(3){
+    flex: 1;
+    max-width: 320px;
+}
+.npy_mod_99 .primary > li:nth-child(3) .dateButtons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+.npy_mod_99 .primary > li:nth-child(3) .dateButtons p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+/* dropdown menu for each li item */
+.npy_mod_99 .primary .dropdown {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    min-width: 100%;
+    max-width: fit-content;
+    padding: 10px 20px;
+    background-color: white;
+    line-height: 40px;
+    border-radius: 5px;
+    box-shadow: 0px  10px 20px 5px #3080c149;
+    z-index: 5;
+}
+.npy_mod_99 .primary li > .dropdown {
+    display: none;
+ }
+ .npy_mod_99 .primary li.active > .dropdown {
+    display: block;
+ }
+/***
+ *    ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+ *    ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
+ *    ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
+ *         ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
+ *    ███████    ██    ██   ██    ██    ██  ██████  ██   ████ 
+ *                                                                                                                       
+ */
 
-    .npy_mod_99 .upper .primary ion-icon{
-        color:  black;
-        margin-right: 5px;
-    }
-    /* active primary list */
-    .npy_mod_99 .upper  .primary.active{
-        position: fixed;
-        z-index: 50;
-        left: 0;
-        top: 0;
-        width: 100%;
-        border-radius: 0;
-        background-color: white;
-        justify-content: center;
-    }
+.npy_mod_99 .station,
+.npy_mod_99 .category,
+.npy_mod_99 .dates,
+.npy_mod_99 .personnes {
+    position: relative;
+}
+.npy_mod_99 .station .dropdown .secondary{
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 0;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    width: max-content;
+    height: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px  10px 20px 5px #3080c149;
+}
+.npy_mod_99 .station .dropdown ul > li{
+    padding: 0 5px;
+    cursor: pointer;
+}
+.npy_mod_99 .station .dropdown ul > li.active{
+    background-color: #3080c149;
+    border-radius: 5px;
+}
+.npy_mod_99 .station .dropdown li.active .secondary{
+    display: flex;
+}
+/* dropdown-menu for station */
 
-    .npy_mod_99 .upper  .primary > li{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        height: 100%;
-        padding: 0 50px;
-        border-right: 1px solid #3080c149;
-    }
+/***
+ *     ██████  █████  ████████ ███████  ██████   ██████  ██████  ██    ██ 
+ *    ██      ██   ██    ██    ██      ██       ██    ██ ██   ██  ██  ██  
+ *    ██      ███████    ██    █████   ██   ███ ██    ██ ██████    ████   
+ *    ██      ██   ██    ██    ██      ██    ██ ██    ██ ██   ██    ██    
+ *     ██████ ██   ██    ██    ███████  ██████   ██████  ██   ██    ██    
+ *                                                                        
+ *                                                                        
+ */
 
-    .npy_mod_99 .upper  .primary > li:nth-child(3){
-        gap: 50px;
-    }
+.npy_mod_99 .primary .category .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary .category.active .dropdown{
+    display: flex;
+}
+.npy_mod_99 .primary .category .dropdown form{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+.npy_mod_99 .primary .category .dropdown input{
+    margin-left: auto;
+}
+/***
+ *    ██████   █████  ████████ ███████ ███████ 
+ *    ██   ██ ██   ██    ██    ██      ██      
+ *    ██   ██ ███████    ██    █████   ███████ 
+ *    ██   ██ ██   ██    ██    ██           ██ 
+ *    ██████  ██   ██    ██    ███████ ███████ 
+ *                                             
+ *                                             
+ */
 
-    .npy_mod_99 .upper .primary > li:last-child,
-    .npy_mod_99 .upper .primary > li:nth-last-child(2){
-        border: none;
-    }
-    /* dropdowns */
-    .npy_mod_99 .primary li.active .dropdown {
+.npy_mod_99 .primary .dates .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary .dates.active .dropdown{
+    display: flex;
+}
+/***
+ *    ██████  ███████ ██████  ███████  ██████  ███    ██ ███    ██ ███████ ███████ 
+ *    ██   ██ ██      ██   ██ ██      ██    ██ ████   ██ ████   ██ ██      ██      
+ *    ██████  █████   ██████  ███████ ██    ██ ██ ██  ██ ██ ██  ██ █████   ███████ 
+ *    ██      ██      ██   ██      ██ ██    ██ ██  ██ ██ ██  ██ ██ ██           ██ 
+ *    ██      ███████ ██   ██ ███████  ██████  ██   ████ ██   ████ ███████ ███████ 
+ *                                                                                 
+ *                                                                                 
+ */
+
+ .npy_mod_99 .primary .personnes .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary  .personnes.active .dropdown{
+    display: flex;
+}
+ .npy_mod_99 .primary .personnes .ctrlButtons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+ }
+ .npy_mod_99 .personnes .dropdown .main-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+ } 
+
+/* 
+ ███    ███ ███████ ██████  ██  █████  
+ ████  ████ ██      ██   ██ ██ ██   ██ 
+ ██ ████ ██ █████   ██   ██ ██ ███████ 
+ ██  ██  ██ ██      ██   ██ ██ ██   ██ 
+ ██      ██ ███████ ██████  ██ ██   ██  
+*/
+
+ @media only screen and (max-width: 768px){
+    .hide-lg {
         display: block;
     }
+    .npy_mod_99 .upper {
+        width: 90%;
+        margin-inline: auto;
+        height: auto;
 
-    .npy_mod_99 .dropdown {
-        position: absolute;
-        top: 100%;
+    }
+    .npy_mod_99 .primary {
+        flex-direction: column;
+        height: fit-content;
         width: 100%;
-        left: 0;
-        background-color: white;
-        display: none;
-        z-index: 15;
     }
-    .npy_mod_99 .dropdown ul{
-        list-style: none;
-        line-height: 40px;
+    .npy_mod_99 .upper .primary > li {
+        border-bottom: 1px solid #3080c149;
+        width: 80%;
+        justify-content: flex-start;
     }
-    .npy_mod_99 .dropdown ul li{
-        background-color: #3080c149;
+    
+    .npy_mod_99 .primary > li,
+    .npy_mod_99 .primary > li:nth-child(3){
+        border-right: none;
+        flex: none;
+        height: 100px;
     }
-    .npy_mod_99 .dropdown ul li.active{
-        background-color: #fff;
+    .npy_mod_99 .primary > li:nth-child(3) .dateButtons{
+        justify-content: space-between;
+        padding: 0;
     }
-    .npy_mod_99 .dropdown ul li .secondary {
-        display: none;
-        width: 500px;
-        height: 100%;
-        overflow-y: auto;
-        padding-left: 25px;
-        word-wrap: break-word;
-        background-color: white;
+    .npy_mod_99 .primary > li:nth-child(4),
+    .npy_mod_99 .primary > li:last-child{
+        border-bottom: none;
     }
-    .npy_mod_99 .dropdown ul li.active .secondary {
-        display: flex;
-        flex-direction: column;
+    .npy_mod_99 .primary > li:last-child{
+        justify-content: center;
     }
-    .npy_mod_99 .category form.dropdown {
-        display: flex;
-        flex-direction: column;
+    .npy_mod_99 .primary > li:last-child button{
+        width: 100%;
+        height: 50px;
     }
-
-    .npy_mod_99 .dropdown .secondary{
-        position: absolute;
+    
+    .npy_mod_99 .primary .station {
+        position: static;
+    }
+    
+    .npy_mod_99 .primary > li.active .dropdown {
+        position: fixed;
+        z-index: 50;
         top: 0;
-        left: 100%;
-    }
-
-    /* category dropdown */
-    .npy_mod_99 .dropdown > form{
-        background-color: white;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        width: max-content;
-        padding: 0 10px;
     }
-    .npy_mod_99 .controls,
-    .npy_mod_99 .btn{
-        display: none;
+    
+    .npy_mod_99 .controls ion-icon {
+        font-size: 40px;
     }
-  .npy_mod_99 .lower {
+    .npy_mod_99 .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 70px;
+        border-bottom: 1px solid #3080c149;
+    }
+    .npy_mod_99 .controls p{
+        display: flex;
+        align-items: center;
+    }
+    .npy_mod_99 .btnValider {
+        height: 70px;
+        border-top: 1px solid #3080c149;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .npy_mod_99 .dropdown .main-content {
+        padding: 30px;
+        flex: 1;
+        width: 100%;
+        overflow-y: auto;
+    }
+    /***
+        *    ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+        *    ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
+        *    ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
+        *         ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
+        *    ███████    ██    ██   ██    ██    ██  ██████  ██   ████ 
+        *                                                                                                                       
+        */
+    
+    .npy_mod_99 .station .dropdown .main-content > ul li {
+        padding: 20px;
+        border-bottom: 1px solid #3080c149;
+    }
+    .npy_mod_99 .station .dropdown .main-content > ul li:last-child {
+        border-bottom: none;
+    }
+    .npy_mod_99 .station .dropdown .main-content > ul li.active{
+        background-color: white;
+    } 
+    .npy_mod_99 .station .dropdown .main-content > ul li.active .secondary {
+        position: static;   
+        padding: 0;
+        box-shadow: none;
+        width: 100%;
+    }
+    .npy_mod_99 .station .dropdown .secondary input{
+        margin-left: auto;
+    }
+/***
+*     ██████  █████  ████████ ███████  ██████   ██████  ██████  ██    ██ 
+*    ██      ██   ██    ██    ██      ██       ██    ██ ██   ██  ██  ██  
+*    ██      ███████    ██    █████   ██   ███ ██    ██ ██████    ████   
+*    ██      ██   ██    ██    ██      ██    ██ ██    ██ ██   ██    ██    
+*     ██████ ██   ██    ██    ███████  ██████   ██████  ██   ██    ██    
+*                                                                        
+*                                                                        
+*/
+
+.npy_mod_99 .category form{
+    min-width: 100%;
+}
+
+    
+/***
+*    ██████   █████  ████████ ███████ ███████ 
+*    ██   ██ ██   ██    ██    ██      ██      
+*    ██   ██ ███████    ██    █████   ███████ 
+*    ██   ██ ██   ██    ██    ██           ██ 
+*    ██████  ██   ██    ██    ███████ ███████ 
+*                                             
+*                                             
+*/
+
+    
+    .npy_mod_99 .primary .dates .dropdown #calendar{
+        width: 100%;
+        height: 100%;
+    }
+    .npy_mod_99 .primary .dates .dropdown .vanilla-calendar-grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+/***
+*    ██████  ███████ ██████  ███████  ██████  ███    ██ ███    ██ ███████ ███████ 
+*    ██   ██ ██      ██   ██ ██      ██    ██ ████   ██ ████   ██ ██      ██      
+*    ██████  █████   ██████  ███████ ██    ██ ██ ██  ██ ██ ██  ██ █████   ███████ 
+*    ██      ██      ██   ██      ██ ██    ██ ██  ██ ██ ██  ██ ██ ██           ██ 
+*    ██      ███████ ██   ██ ███████  ██████  ██   ████ ██   ████ ███████ ███████ 
+*                                                                                 
+*                                                                                 
+*/
+    .npy_mod_99 .primary .personnes .number{
+        width: 100%;
+    }
+    .npy_mod_99 .primary .personnes .number > div{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+ }
+
+/* end media */
+
+.npy_mod_99 .lower {
     display: flex;
     gap: 25px;
     width: 100%;
-  }
-  .npy_mod_99 ion-icon {
+}
+.npy_mod_99 ion-icon {
     color: white;
-  }
-  .npy_mod_99 .card-wide {
+}
+.npy_mod_99 .card-wide {
     display: flex;
     overflow: hidden;
     width: 850px;
@@ -340,7 +598,7 @@ body{
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 25px 5px #3080c149;
-  }
+}
   
   /* image carousel */
     .npy_mod_99 .img-slider {
@@ -425,7 +683,6 @@ body{
     flex-wrap: wrap;
     gap: 20px;
   }
-
   .npy_mod_99 .rating p:first-child,
   .npy_mod_99 .rating p:last-child{
     color: #2A8E48;
@@ -437,31 +694,36 @@ body{
 
   .npy_mod_99 .rating ion-icon {
     font-size: 16px;
-    color: var(--dark-blue);
+    color: var(--dark-blue) !important;
   }
 
   /* lower container */
-.npy_mod_99 .options {
-    width: 250px;
+.npy_mod_99 .lower .options {
+    width: max-content;
     margin-right: 50px;
     padding-left: 50px;
+}
+.npy_mod_99 .lower .options form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: max-content;
+}
+.npy_mod_99 .lower .options form label{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .npy_mod_99 .lower .options input[type="checkbox"]{
     width: 25px;
     height: 25px;
-    margin: 5px 0;
+    margin-left: 5px;
     cursor: pointer;
     accent-color: #7bff9a;
 }
-.npy_mod_99 .lower .options p{
+.npy_mod_99 .lower .options > p{
     font-weight: 500;
 }  
-.npy_mod_99 .lower .options form label{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
 .npy_mod_99 .lower .cards {
     display: flex;
     flex-direction: column;
@@ -469,7 +731,9 @@ body{
 }
 .npy_mod_99 .map{
     position: relative;
+    background-color: white;
 }
+
 .npy_mod_99 .map iframe {
     width: 640px;
     height: 700px;
@@ -524,155 +788,55 @@ body{
     font-size: 16px;
     margin-right: 5px;
 }
+.npy_mod_99 ion-icon {
+    color: black;
+}
+.npy_mod_99 .card-wide ion-icon {
+    color: white;
+}
 
 /* mod 99 media queries */
 @media only screen and (max-width: 768px) {
     /* mod_99 upper container media queries */
-    .npy_mod_99 .upper {
-        width: 90%;
-        margin-inline: auto;
-        height: max-content;
+    .npy_mod_99 .options,
+    .npy_mod_99 .map{
+        display: none;
     }
-    .npy_mod_99 .upper .primary li p {
-        font-weight: 700;
-    }
-    .npy_mod_99 .upper .primary li ion-icon {
-        margin-right: 10px;
-    }
-    .npy_mod_99 .upper .primary {
-        flex-direction: column;
-        padding: 15px 0;
-        border: none;
-    }
-    .npy_mod_99 .upper .primary {
-        position: static;
-        width: 100%;
-        height: max-content;
-    }
-    .npy_mod_99 .upper .primary > li {
-        position: static;
-        width: 80%;
-        justify-content: flex-start;
-        padding: 0;
-        padding: 25px 0;
-        border: none;
-        border-bottom: 1px solid #3080c149;
-        position: static;
-    }
-    .npy_mod_99 .upper .primary li:last-child {
-        justify-content: center;
-    }
-    .npy_mod_99 .upper .primary > li:nth-child(3){
-        justify-content: space-between;
-    }
-    .npy_mod_99 .upper .primary li:last-child button {
-        text-align: center;
-        width: 100%;
-    }
-    /* active primary list */
-    .npy_mod_99 .upper .primary li.active .dropdown {
-        display: block;
-        position: fixed;
+    .npy_mod_99 .map.full{
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        z-index: 50;
+        position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 100%;
-    }    
-    .npy_mod_99 .dropdown ul,
-    .npy_mod_99 .dropdown form,
-    .npy_mod_99 .dropdown > div.number {
-        height: 100%;
-        overflow-y: scroll;
+    }
+    .npy_mod_99 .map .controls{
         background-color: white;
+        justify-content: flex-end;
     }
-    .npy_mod_99 .dropdown > div.number {
-        display: flex;
-        justify-content: space-between;
-        padding: 25px 10%;
-    }
-    .npy_mod_99 .dropdown > div.number button{
-        width: 25px;
-    }
-    .npy_mod_99 .personnes .dropdown .number > p{
-        display: block;
-    }
-    .npy_mod_99 .dropdown ul li{
-        padding: 15px 0;
-        background-color: white;
-        width: 90%;
-        margin-inline: auto;
-        border-bottom: 1px solid #3080c149;
-    }
-    .npy_mod_99 .dropdown ul li p,
-    .npy_mod_99 .dropdown > form{
-        font-weight: 700;
-    }
-    .npy_mod_99 .dropdown ul li:last-child{
-        border: none;
-    }
-    .npy_mod_99 .dropdown ul li p{
-
-        background-color: white;
-    }
-    .npy_mod_99 .dropdown ul li .secondary{
-        position: static;
+    .npy_mod_99 .map.full iframe{
+        border-radius: 0;
         width: 100%;
-        padding: 0;
-    }
-    .npy_mod_99 ion-icon {
-        color: black;
-    }
-
-    /* calendar*/
-    #calendar {
-        width: 90%;
-        margin-inline: auto;
         height: 100%;
-
     }
-    .vanilla-calendar-grid {
+    .npy_mod_99 .map.full .mapFilter{
+        position: absolute;
+        bottom: 5%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-inline: auto;
-        width: 100%;
-        font-size: 15px;
-    }
-    .vanilla-calendar-content *{
-        font-size: 18px;
-    }
-    /* previous page, close modal, confirm selection buttons */
-    .npy_mod_99 .btn,
-    .npy_mod_99 .controls {
-        display: flex;
-        align-items: center;
-        height: 70px;
-    }
-    .npy_mod_99 .btn {
         justify-content: center;
-        border-top: 1px solid #3080c149;
+        width: 100%;
+        gap: 30px;
     }
-    .npy_mod_99 .controls {
-        padding-inline: 25px;
-        justify-content: space-between;
-        border-bottom: 1px solid #3080c149;
-    }
-    .npy_mod_99 .controls ion-icon {
-        font-size: 24px;
-    }
-    .npy_mod_99 .controls p {
+    .npy_mod_99 .mapFilter button{
+        color: black;
+        background-color: white;
+        border: 2px solid #F96B00;
+        border-radius: 5px;
         display: flex;
         align-items: center;
-    }
-    .npy_mod_99 .options,
-    .npy_mod_99 .map{
-        display: none;
     }
     .npy_mod_99 .lower .cards{
         width: 100%;
@@ -715,15 +879,7 @@ body{
         display: block;
     }
 }
-
-.testt {
-    width: 500px;
-    height: 300px;
-    margin-inline: auto;
-    background-color: green;
-}
-
-
+/* mod 100 */
 .npy_mod_100 {
     width: 1240px;
     margin-inline: auto;

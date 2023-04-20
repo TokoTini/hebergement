@@ -7,11 +7,6 @@ let leftButtons = document.querySelectorAll('.btnLeft');
 let rightButtons = document.querySelectorAll('.btnRight');
 
 
-// menuBtn.addEventListener('click', () => {
-//     navbar.classList.toggle('active')
-// })
-
-
 rightButtons.forEach(function(rightButton){
     rightButton.addEventListener('click', function(event){
         let parentDiv = event.target.closest('.img-container').querySelector('.img-slider');
@@ -43,6 +38,13 @@ leftButtons.forEach(function(leftButton){
 //     })
 //     li.classList.add('active');
 // }
+let form = document.querySelectorAll('form');
+form.forEach(f => {
+    f.addEventListener('clicl', (event) => {
+        event.preventDefault();
+    })
+})
+
 let mainList = document.querySelectorAll('.primary > li');
 let closeBtn = document.querySelectorAll('.closeBtn');
 mainList.forEach(li => {
@@ -63,7 +65,7 @@ mainList.forEach(li => {
 closeBtn.forEach(btn => {
     btn.addEventListener('click', (e) =>{
         e.stopPropagation()
-        let parentDiv = e.target.closest('li');
+        let parentDiv = e.target.closest('.primary > li');
         parentDiv.classList.remove('active');
         document.body.classList.remove('disabled');
     })
@@ -79,6 +81,7 @@ secondaryList.forEach(li => {
         secondaryList.forEach(function(item) {
             item.classList.remove('active');
         })
+        e.stopPropagation()
         li.classList.toggle('active');
     })
 })
@@ -93,8 +96,8 @@ let minusBtn = document.querySelector('.minus')
 let n = 4;
 plusBtn.addEventListener('click', () => {
     n++;
-    personnesInput.innerHTML = n +" " + "Personnes";
-    personnes.innerHTML = n + " " + "Personnes";
+    personnesInput.textContent = n +" " + "Personnes";
+    personnes.textContent = n + " " + "Personnes";
 })
 
 minusBtn.addEventListener('click', () => {
@@ -104,15 +107,14 @@ minusBtn.addEventListener('click', () => {
         n = 1;
     }
     let person = n > 1 ? "Personnes" : "Personne";
-    personnesInput.innerHTML = n +" "+ person;
-    personnes.innerHTML = n +" "+ person;
+    personnesInput.textContent = n +" "+ person;
+    personnes.textContent = n +" "+ person;
 })
 
 
 let mapBtn = document.querySelector('.carte');
 let map = document.querySelector('.map');
 let closeMap = document.querySelector('.closeMap');
-
 mapBtn.addEventListener('click',() =>{
     map.classList.add('full');
     document.body.classList.add('disabled');
@@ -121,6 +123,49 @@ closeMap.addEventListener('click', () =>{
     map.classList.remove('full')
     document.body.classList.remove('disabled');
 })
+
+
+
+
+let optionsBtn = document.body.querySelectorAll('.filter');
+let filter = document.body.querySelector('.options');
+let closeFilter = document.body.querySelector('.closeOptions');
+
+optionsBtn.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation()
+        filter.classList.add('active');
+    })
+})
+
+
+// open dates modal from .map modal
+let openDates = document.body.querySelector('.openDates');
+let dates = document.body.querySelector('.dates')
+openDates.addEventListener('click', () => {
+    dates.classList.add('active');
+})
+
+
+// close filter modal
+closeFilter.addEventListener('click', () =>{
+    filter.classList.remove('active')
+    document.body.classList.remove('disabled');
+})
+
+//filter options 
+let prixInput = document.body.querySelector('.prixInput');
+let optionsPrix = document.body.querySelector('.optionsPrix')
+let numInput = document.body.querySelector('.numInput input')
+
+function showValue(newVal){
+    let value = newVal > 4000 ? 4000 : newVal;
+    // optionsPrix.innerHTML = "Prix max. du sejour: <b>" + value + "€</b>.";
+    prixInput.value = value;
+    numInput.value = value;
+}
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 /*** Different ScrollTrigger setups for various screen sizes (media queries) ***/
@@ -185,3 +230,14 @@ ScrollTrigger.matchMedia({
   }
   
 });
+
+
+
+//  ██████  █████  ██      ███████ ███    ██ ██████   █████  ██████  
+// ██      ██   ██ ██      ██      ████   ██ ██   ██ ██   ██ ██   ██ 
+// ██      ███████ ██      █████   ██ ██  ██ ██   ██ ███████ ██████  
+// ██      ██   ██ ██      ██      ██  ██ ██ ██   ██ ██   ██ ██   ██ 
+//  ██████ ██   ██ ███████ ███████ ██   ████ ██████  ██   ██ ██   ██ 
+                                                                  
+                                                                  
+

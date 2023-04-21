@@ -17,8 +17,6 @@ rightButtons.forEach(function(rightButton){
     })
 })
 
-
-
 leftButtons.forEach(function(leftButton){
     leftButton.addEventListener('click', function(event){
         let parentDiv = event.target.closest('.img-container').querySelector('.img-slider');
@@ -38,13 +36,15 @@ leftButtons.forEach(function(leftButton){
 //     })
 //     li.classList.add('active');
 // }
+
 let form = document.querySelectorAll('form');
 form.forEach(f => {
-    f.addEventListener('clicl', (event) => {
-        event.preventDefault();
+    f.addEventListener('click', (event) => {
+        event.stopPropagation()
     })
 })
 
+// primary list station/category/arrival-departure/number of persons
 let mainList = document.querySelectorAll('.primary > li');
 let closeBtn = document.querySelectorAll('.closeBtn');
 mainList.forEach(li => {
@@ -72,9 +72,8 @@ closeBtn.forEach(btn => {
 })
 
 
-
+//list for stations dropdown menu
 let secondaryList = document.querySelectorAll('.dropdown ul li')
-
 secondaryList.forEach(li => {
     li.addEventListener('click', (e) => {
         e.stopPropagation()
@@ -87,11 +86,12 @@ secondaryList.forEach(li => {
 })
 
 
-let personnesInput = document.querySelector('.personnes .number p')
-let personnes = document.querySelector('.personnes > p');
+
+//buttons for increase/decrease number of persons
+let personnesInput = document.querySelector('.personnes p')
+let personnes = document.querySelector('.main-content > p');
 let plusBtn = document.querySelector('.plus')
 let minusBtn = document.querySelector('.minus')
-
 
 let n = 4;
 plusBtn.addEventListener('click', () => {
@@ -112,6 +112,7 @@ minusBtn.addEventListener('click', () => {
 })
 
 
+// display map modal on mobile devices
 let mapBtn = document.querySelector('.carte');
 let map = document.querySelector('.map');
 let closeMap = document.querySelector('.closeMap');
@@ -126,7 +127,7 @@ closeMap.addEventListener('click', () =>{
 
 
 
-
+// display search options modal
 let optionsBtn = document.body.querySelectorAll('.filter');
 let filter = document.body.querySelector('.options');
 let closeFilter = document.body.querySelector('.closeOptions');
@@ -165,6 +166,35 @@ function showValue(newVal){
     numInput.value = value;
 }
 
+//sort modal 
+
+let sort = document.body.querySelector('.trier');
+let sortModal = document.body.querySelector('.sort-modal');
+let closeSort = document.body.querySelector('.closeSort');
+
+// open sort modal
+sort.addEventListener('click', () => {
+    sortModal.classList.add('active');
+})
+//close sort modal
+closeSort.addEventListener('click', () => {
+    sortModal.classList.remove('active');
+})
+
+// create list of sort options for mobile devices                                                              
+let select = document.getElementById('sort');
+let ul = document.querySelector('.sort-modal ul');
+for(let i = 0; i < select.options.length; i++) {
+    var option = select.options[i];
+    var li = document.createElement('li');
+    li.textContent = option.textContent;
+    li.setAttribute('data-value', option.value);
+    li.addEventListener('click', (event) => {
+        select.value = event.target.getAttribute('data-value');
+        sortModal.classList.remove('active');
+    })
+    ul.appendChild(li);
+}
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -177,7 +207,7 @@ ScrollTrigger.matchMedia({
     gsap.to('.primary',{
         scrollTrigger: {
             trigger: ".lower",
-            start: "top 10%",
+            start: "top 18.5%",
             end: "bottom 5%",
             toggleClass: { className: "active", targets: ".primary" },
             // markers: {
@@ -187,18 +217,18 @@ ScrollTrigger.matchMedia({
             // },
         }
     })
-        gsap.to('.map',{
-        scrollTrigger: {
-            trigger: ".lower",
-            start: "bottom 80%",
-            end: "bottom .1%",
-            toggleClass: { className: "bottom", targets: ".map" },
-            // markers: {
-            //     startColor: 'purple',
-            //     endColor: "brown",
-            //     fontSize: '1.75rem',
-            // },
-        }
+    gsap.to('.map',{
+    scrollTrigger: {
+        trigger: ".lower",
+        start: "bottom 80%",
+        end: "bottom .1%",
+        toggleClass: { className: "bottom", targets: ".map" },
+        // markers: {
+        //     startColor: 'purple',
+        //     endColor: "brown",
+        //     fontSize: '1.75rem',
+        // },
+    }
     })
     gsap.to('.map',{
         scrollTrigger: {
@@ -230,14 +260,4 @@ ScrollTrigger.matchMedia({
   }
   
 });
-
-
-
-//  ██████  █████  ██      ███████ ███    ██ ██████   █████  ██████  
-// ██      ██   ██ ██      ██      ████   ██ ██   ██ ██   ██ ██   ██ 
-// ██      ███████ ██      █████   ██ ██  ██ ██   ██ ███████ ██████  
-// ██      ██   ██ ██      ██      ██  ██ ██ ██   ██ ██   ██ ██   ██ 
-//  ██████ ██   ██ ███████ ███████ ██   ████ ██████  ██   ██ ██   ██ 
-                                                                  
-                                                                  
 

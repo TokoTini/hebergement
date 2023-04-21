@@ -144,8 +144,11 @@
                         <ion-icon name="triangle-outline"></ion-icon><p>Station</p>
                         <div class="dropdown">
                             <div class="controls hide-lg">
-                                <p><ion-icon name="arrow-back-circle-outline"></ion-icon>Étape précédente</p>
-                                <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                <div>
+                                    <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                                    <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                </div>
+                                <p class="hide-lg"><ion-icon name="triangle-outline"></ion-icon>Station</p>
                             </div>
                             <div class="main-content">
                                 <ul>
@@ -289,8 +292,11 @@
                         <ion-icon name="home-outline"></ion-icon><p>Catégorie</p>
                         <div class="dropdown">
                             <div class="controls">
-                                <p class="hide-lg"><ion-icon name="arrow-back-circle-outline"></ion-icon>Étape précédente</p>
-                                <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                <div>
+                                    <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                                    <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                </div>
+                                <p class="hide-lg"><ion-icon name="home-outline"></ion-icon>Catégorie</p>
                             </div>
                             <div class="main-content">
                                 <form>
@@ -314,8 +320,11 @@
                         </div>
                         <div class="dropdown">
                             <div class="controls">
-                                <p class="hide-lg"><ion-icon name="arrow-back-circle-outline"></ion-icon>Étape précédente</p>
-                                <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                <div>
+                                    <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                                    <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                </div>
+                                <p class="hide-lg"><ion-icon name="calendar-outline"></ion-icon></ion-icon>Dates de séjour</p>
                             </div>
                             <div class="main-content">
                                 <div id="calendar"></div>
@@ -331,18 +340,17 @@
                         <p>4 Personnes</p>
                         <div class="dropdown">
                             <div class="controls">
-                                <p class=" hide-lg"><ion-icon name="arrow-back-circle-outline"></ion-icon>Étape précédente</p>
-                                <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                <div>
+                                    <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                                    <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
+                                </div>
+                                <p class="hide-lg"><ion-icon name="person-outline"></ion-icon>Personnes</p>
                             </div>
                             <div class="main-content">
-                                <div class="number">
-                                    <div>
-                                        <p class="hide-lg">4 Personnes</p>
-                                        <div class="ctrlButtons">
-                                            <button class="primary-btn minus">-</button>
-                                            <button class="primary-btn plus">+</button>
-                                        </div>
-                                    </div>
+                                <p class="hide-lg">4 Personnes</p>
+                                <div class="ctrlButtons">
+                                    <ion-icon name="remove-circle-outline" class="minus"></ion-icon>
+                                    <ion-icon name="add-circle-outline" class="plus"></ion-icon>
                                 </div>
                             </div>
                             <div class="btnValider">
@@ -353,20 +361,47 @@
                     <li><button class="primary-btn">Rechercher</button>
                 </ul>
             </div>
-            <div class="optionsSort">
-                <h3>3930 résultats</h3>
-                <ul>
-                    <li class="filter"><ion-icon name="funnel-outline"></ion-icon>Filter</li>
-                    <li class="trier"><ion-icon name="funnel-outline"></ion-icon>Trier</li>
-                    <li class="carte"><ion-icon name="map-outline"></ion-icon>Carte</li>
-                </ul>
+            <div class="middle">
+                <div class="searchFilter hide-lg">
+                    <ul>
+                        <li class="filter"><ion-icon name="funnel-outline"></ion-icon>Filter</li>
+                        <li class="trier"><ion-icon name="funnel-outline"></ion-icon>Trier</li>
+                        <li class="carte"><ion-icon name="map-outline"></ion-icon>Carte</li>
+                    </ul>
+                </div>
+                <div class="sortResults">
+                    <h3>3930 résultats</h3>
+                    <p class="trierPar">Trier Par :</p>
+                    <select id="sort">
+                        <option value="opt-1">Meilleurs avis</option>
+                        <option value="opt-2">Nombre d'avis</option>
+                        <option value="opt-3">Prix décroissants</option>
+                        <option value="opt-4">Prix croissants</option>
+                    </select>
+                </div>
+                <div class="sort-modal">
+                    <div class="controls">
+                        <div>
+                            <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                            <p class="closeSort"><ion-icon name="close-outline" class="closeSort"></ion-icon></p>
+                        </div>
+                        <p><ion-icon name="swap-vertical-outline" style="color:black"></ion-icon>Trier les hebergements</p>
+                    </div>
+                    <div>
+                        <p><b> Trier par:</b></p>
+                        <ul class=""></ul>
+                    </div>
+                </div>
             </div>
             <div class="lower">
                 <!-- classement/options -->
                 <div class="options">
-                    <div class="controls hide-lg">
-                        <p><ion-icon name="arrow-back-circle-outline"></ion-icon>Étape précédente</p>
-                        <p class="closeOptions"><ion-icon name="close-outline"></ion-icon></p>
+                    <div class="controls">
+                        <div class="hide-lg">
+                            <p><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
+                            <p class="closeOptions"><ion-icon name="close-outline"></ion-icon></p>
+                        </div>
+                        <p class="hide-lg"><ion-icon name="funnel-outline"></ion-icon>Filtres</p>
                     </div>
                     <form>
                         <div class="prix">
@@ -374,10 +409,11 @@
                             <p class="optionsPrix hde-lg">Prix max. du sejour:</p>
                             <div class="numInput">
                                 <ion-icon name="options-outline"></ion-icon>
-                                <input type="number"
+                                <input 
+                                type="number"
                                 value="200"
                                 oninput="showValue(this.value)"
-                                onchange="showValue(this.value)"></input>
+                                onchange="showValue(this.value)">
                             </div>
                             <input 
                             class="prixInput"
@@ -681,7 +717,7 @@
                 </div>
                 <div class="map">
                     <div class="controls">
-                        <p class="closeBtn closeMap hide-lg">Fermer<ion-icon name="close-outline"></ion-icon></p>
+                        <p class="closeMap hide-lg">Fermer<ion-icon name="close-outline"></ion-icon></p>
                     </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22703.63413991845!2d-0.332640582778422!3d44.65928601236303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5514deeb88cf83%3A0xf9c0edcd96119a04!2sTrajet%2C%2033410%20Laroque!5e0!3m2!1sfr!2sfr!4v1681207085895!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="mapFilter hide-lg">

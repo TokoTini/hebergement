@@ -2,13 +2,15 @@ const options = {
   actions: {
       clickDay(event, dates) {
           
-        let start = dates[0];
-        let end = dates[dates.length -1];
+        let start = dates[0].split('-');
+        let newStart =  start[2] + "/" +start[1]+ "/" +start[0];
+        let end = dates[dates.length -1].split('-');
+        let newEnd =  end[2]+ "/" +end[1]+ "/" +end[0];
         
-        if(start > end) {
-          updateDates(end,start);
+        if(newStart > newEnd) {
+          displayDates(newEnd,newStart);
         }else{
-          updateDates(start,end);
+          displayDates(newStart,newEnd);
         }
       },
   },
@@ -24,6 +26,7 @@ const options = {
     },
     visibility: {
       theme: 'light',
+      weekend: false,
     },
   },
   months: 2,
@@ -43,7 +46,7 @@ calendar.init();
 let startDate = document.body.querySelector('.arrivee');
 let endDate = document.body.querySelector('.depart');
 
-function updateDates(a,b){
+function displayDates(a,b){
   if(a,b){
       startDate.textContent = a;
       endDate.textContent = b;
@@ -51,4 +54,5 @@ function updateDates(a,b){
       startDate.innerHTML = "<ion-icon name=" + "calendar-outline" + "></ion-icon></ion-icon>Depart";
       endDate.innerHTML = "<ion-icon name=" + "calendar-outline" + "></ion-icon>Arrivee"
   }
+  console.log(a,b)
 }

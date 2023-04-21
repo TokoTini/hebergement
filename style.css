@@ -242,8 +242,11 @@ input[type="radio"]:checked {
     margin-right: 7px;
     color: var(--dark-blue);
 }
-.npy_mod_99 .controls {
-    --ionicon-stroke-width: 20px;
+.npy_mod_99 .controls ion-icon{
+    --ionicon-stroke-width: 50px;
+}
+.npy_mod_99 .controls .hide-lg p:first-child ion-icon{
+    --ionicon-stroke-width: 10px;
 }
 /* primary list */
 .npy_mod_99 .primary > li{
@@ -299,6 +302,7 @@ input[type="radio"]:checked {
  .npy_mod_99 .primary li.active > .dropdown {
     display: block;
  }
+
  /* close modal button for screen width higher than 768px */
  @media only screen and (min-width: 768px){
     .npy_mod_99 .primary .dropdown .controls .closeBtn {
@@ -369,6 +373,7 @@ input[type="radio"]:checked {
 .npy_mod_99 .station .dropdown li.active .secondary{
     display: flex;
 }
+
 /* dropdown-menu for station */
 
 /***
@@ -426,6 +431,7 @@ input[type="radio"]:checked {
 }
 .npy_mod_99 .primary  .personnes.active .dropdown{
     display: flex;
+    padding-bottom: 20px;
 }
  .npy_mod_99 .primary .personnes .ctrlButtons {
     display: flex;
@@ -437,6 +443,10 @@ input[type="radio"]:checked {
     justify-content: space-around;
     width: 100%;
  } 
+ .npy_mod_99 .primary .personnes .main-content ion-icon {
+    color: var(--dark-blue);
+    font-size: 40px;
+ }
 
 /* 
  ███    ███ ███████ ██████  ██  █████  
@@ -509,20 +519,35 @@ input[type="radio"]:checked {
     }
     
     .npy_mod_99 .controls ion-icon {
-        font-size: 40px;
+        font-size: 32px;
     }
     .npy_mod_99 .controls {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        height: 85px;
-        border-bottom: 1px solid #3080c149;
+        flex-wrap: wrap;
+        padding: 20px 20px;
+        height: fit-content;
+        width: 100%;
+        gap: 10px;
     }
-    .npy_mod_99 .controls p{
+    .npy_mod_99 .controls > div{
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
     }
+    .npy_mod_99 .controls p {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+    }
+    .npy_mod_99 .controls > p ion-icon{
+        font-size: 20px;
+        --ionicon-stroke-width: 30px;
+        margin-inline: 5px;
+        
+    }
+
     .npy_mod_99 .btnValider {
         height: 85px;
         border-top: 1px solid #3080c149;
@@ -535,7 +560,7 @@ input[type="radio"]:checked {
         font-weight: 700;
     }
     .npy_mod_99 .dropdown .main-content {
-        padding: 30px;
+        padding: 20px 30px;
         flex: 1;
         width: 100%;
         overflow-y: auto;
@@ -552,6 +577,7 @@ input[type="radio"]:checked {
     .npy_mod_99 .station .dropdown .main-content > ul li {
         padding: 20px;
         border-bottom: 1px solid #3080c149;
+        border-radius: 0;
     }
     .npy_mod_99 .station .dropdown .main-content > ul li:last-child {
         border-bottom: none;
@@ -618,23 +644,105 @@ input[type="radio"]:checked {
 *                                                                                 
 *                                                                                 
 */
-    .npy_mod_99 .primary .personnes .number{
-        width: 100%;
+    .npy_mod_99 .primary .personnes .main-content {
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
     }
-    .npy_mod_99 .primary .personnes .number > div{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
+    .npy_mod_99 .primary .personnes .main-content .ctrlButtons {
+        height: auto;
     }
- }
 
+ }
 /* end media */
+
+
+/* npy_mod_99 middle section */
+.npy_mod_99 .middle{
+    width: 1240px;
+    margin-inline: auto;
+    /* display: none; */
+}
+.npy_mod_99 .middle .sortResults {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.npy_mod_99 .middle .sortResults h3{
+    margin-right: 50px;
+}
+.npy_mod_99 .sort-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 5;
+}
+.npy_mod_99 .sort-modal .controls > div{
+    display: flex;
+}
+.npy_mod_99 .sort-modal > div:last-child{
+    padding: 30px;
+    line-height: 40px;
+}
+
+
+
+/* npy_mod_99 middle section media queries*/
+@media only screen and (max-width: 768px) {
+    .npy_mod_99 .middle {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 90%;
+        margin-inline: auto;
+    }
+    .npy_mod_99 .middle .sortResults p,
+    .npy_mod_99 .middle .sortResults select{
+        display: none;
+    }
+    .npy_mod_99 .searchFilter{
+        display: block;
+    }
+    .npy_mod_99 .searchFilter > ul{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        border-radius: 10px;
+        border: 1px solid #3080c149;
+    }
+    .npy_mod_99 .searchFilter > ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .npy_mod_99 .searchFilter > ul li{
+        border-right: 1px solid #3080c149;
+    }
+    .npy_mod_99 .searchFilter > ul li:last-child{
+        border-right: 0;
+    }
+    .npy_mod_99 .searchFilter > ul ion-icon{
+        margin-right: 10px;
+    }
+    .npy_mod_99 .middle .sort-modal.active {
+        display: block;
+    }
+
+}
 
 .npy_mod_99 .lower {
     display: flex;
     gap: 25px;
-    width: 100%;
 }
 .npy_mod_99 ion-icon {
     color: white;
@@ -810,40 +918,6 @@ input[type="radio"]:checked {
     top: 75px;
 }
 
-.npy_mod_99 .optionsSort{
-    width: 90%;
-    margin-inline: auto;
-    display: none;
-}
-.npy_mod_99 .optionsSort h3 {
-    margin-bottom: 20px;
-}
-.npy_mod_99 .optionsSort ul{
-
-    display: flex;
-    list-style: none;
-    height: 70px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #3B8BDB2B;
-    border-radius: 10px;
-}
-.npy_mod_99 .optionsSort ul li {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70%;
-    border-right: 1px solid #3B8BDB2B;
-}
-.npy_mod_99 .optionsSort ul li:last-child{
-    border: none;
-}
-.npy_mod_99 .optionsSort ion-icon {
-    color: black;
-    font-size: 16px;
-    margin-right: 5px;
-}
 .npy_mod_99 ion-icon {
     color: black;
 }
@@ -915,7 +989,6 @@ input[type="radio"]:checked {
     background-color: #F96B00;
     color: white;
 }
-
 /* mod 99 media queries */
 @media only screen and (max-width: 768px) {
     /* mod_99 lower container media queries */
@@ -1020,9 +1093,6 @@ input[type="radio"]:checked {
         right: 5%;
         left: auto;
     }
-    .npy_mod_99 .optionsSort{
-        display: block;
-    }
 }
 /* mod 100 */
 .npy_mod_100 {
@@ -1043,3 +1113,6 @@ input[type="radio"]:checked {
 
 
 
+
+
+/* -------------------------------- 

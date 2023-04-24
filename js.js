@@ -112,19 +112,32 @@ minusBtn.addEventListener('click', () => {
 })
 
 
-// display map modal on mobile devices
+// display map modal on mobile devices + information importante modal
 let mapBtn = document.querySelector('.carte');
 let map = document.querySelector('.map');
 let closeMap = document.querySelector('.closeMap');
+let mapInfo = document.querySelector('.info-map');
+let mapOverlay = document.querySelector('.map-overlay');
+let closeMapInfo = document.querySelectorAll('.close-map-info');
+
 mapBtn.addEventListener('click',() =>{
     map.classList.add('full');
+    mapInfo.classList.add('active');
+    mapOverlay.classList.add('active')
     document.body.classList.add('disabled');
 })
 closeMap.addEventListener('click', () =>{
     map.classList.remove('full')
+    mapInfo.classList.remove('active');
+    mapOverlay.classList.remove('active');
     document.body.classList.remove('disabled');
 })
-
+closeMapInfo.forEach(btn => {
+    btn.addEventListener('click', () => {
+        mapInfo.classList.remove('active');
+        mapOverlay.classList.remove('active');
+    })
+})
 
 
 // display search options modal
@@ -141,10 +154,13 @@ optionsBtn.forEach(btn => {
 
 
 // open dates modal from .map modal
-let openDates = document.body.querySelector('.openDates');
+let openDates = document.body.querySelectorAll('.openDates');
 let dates = document.body.querySelector('.dates')
-openDates.addEventListener('click', () => {
-    dates.classList.add('active');
+
+openDates.forEach(btn => {
+    btn.addEventListener('click', () => {
+        dates.classList.add('active');
+    })
 })
 
 
@@ -197,6 +213,35 @@ for(let i = 0; i < select.options.length; i++) {
 }
 
 
+
+
+// special offers container 
+let scrollLeft = document.querySelectorAll('.scrlLeft');
+let scrollRight = document.querySelectorAll('.scrlRight');
+
+scrollLeft.forEach(function(leftBtn){
+    leftBtn.addEventListener('click', function(event){
+        let parentDiv = event.target.closest('.offersCont').querySelector('.offers');
+        parentDiv.scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        })
+        console.log('hola')
+    })
+})
+
+scrollRight.forEach(function(rightBtn){
+    rightBtn.addEventListener('click', function(event){
+        let parentDiv = event.target.closest('.offersCont').querySelector('.offers');
+        parentDiv.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        })
+        console.log('hola')
+    })
+})
+
+
 gsap.registerPlugin(ScrollTrigger);
 /*** Different ScrollTrigger setups for various screen sizes (media queries) ***/
 ScrollTrigger.matchMedia({
@@ -207,7 +252,7 @@ ScrollTrigger.matchMedia({
     gsap.to('.primary',{
         scrollTrigger: {
             trigger: ".lower",
-            start: "top 18.5%",
+            start: "top 23.5%",
             end: "bottom 5%",
             toggleClass: { className: "active", targets: ".primary" },
             // markers: {
@@ -247,10 +292,23 @@ ScrollTrigger.matchMedia({
   }, 
   
   // mobile
-  "(max-width: 799px)": function() {
+  "(max-width: 768px)": function() {
     // Any ScrollTriggers created inside these functions are segregated and get
     // reverted/killed when the media query doesn't match anymore. 
-
+    gsap.to('.searchFilter',{
+        scrollTrigger: {
+            trigger: ".lower",
+            start: "top 20%",
+            end: "bottom 20%",
+            toggleClass: { className: "fixed", targets: ".searchFilter" },
+            toggleActions: "resume none none none",
+            // markers: {
+            //     startColor: 'yellow',
+            //     endColor: "pink",
+            //     fontSize: '1.75rem',
+            // },
+        }
+    })
   }, 
   
   // all 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://unpkg.com/akar-icons-fonts"></script> -->
     <link rel="stylesheet" href="https://npyresa.github.io/Assets/css/generique/npy_style_gen.css">
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
@@ -324,7 +325,7 @@
                                     <p class=" hide-lg"><ion-icon name="arrow-back-outline"></ion-icon>Étape précédente</p>
                                     <p class="closeBtn"><ion-icon name="close-outline"></ion-icon></p>
                                 </div>
-                                <p class="hide-lg"><ion-icon name="calendar-outline"></ion-icon></ion-icon>Dates de séjour</p>
+                                <p class="hide-lg"><ion-icon name="calendar-outline"></ion-icon>Dates de séjour</p>
                             </div>
                             <div class="main-content">
                                 <div id="calendar"></div>
@@ -361,6 +362,80 @@
                     <li><button class="primary-btn">Rechercher</button>
                 </ul>
             </div>
+            <div class="offersCont">
+                <p>Offres spéciales dans vos dates</p>
+                <div class="offers">
+                    <div class="offersCard">
+                        <div class="offersImg">
+                            <img src="img/OP_3C877BB01BC202DEC11138F2F58F9FD9.png" alt="">
+                        </div>
+                        <div class="offersDesc">
+                            <h3>Semaine crazy</h3>
+                            <p>Du 10/10/2022 au 31/10/2022</p>
+                            <div>
+                                <p><b>Forfait +hébergement</b></p>
+                                <p>à partir de 99€ sur un sélection d'hébergements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offersCard">
+                        <div class="offersImg">
+                            <img src="img/OP_3C877BB01BC202DEC11138F2F58F9FD9.png" alt="">
+                        </div>
+                        <div class="offersDesc">
+                            <h3>Early Booking Février</h3>
+                            <p>Du 10/10/2022 au 31/10/2022</p>
+                            <div>
+                                <p><b>Forfait +hébergement</b></p>
+                                <p>à partir de 99€ sur un sélection d'hébergements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offersCard">
+                        <div class="offersImg">
+                            <img src="img/OP_3C877BB01BC202DEC11138F2F58F9FD9.png" alt="">
+                        </div>
+                        <div class="offersDesc">
+                            <h3>Early Booking Février</h3>
+                            <p>Du 10/10/2022 au 31/10/2022</p>
+                            <div>
+                                <p><b>Forfait +hébergement</b></p>
+                                <p>à partir de 99€ sur un sélection d'hébergements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offersCard">
+                        <div class="offersImg">
+                            <img src="img/OP_3C877BB01BC202DEC11138F2F58F9FD9.png" alt="">
+                        </div>
+                        <div class="offersDesc">
+                            <h3>Early Booking Février</h3>
+                            <p>Du 10/10/2022 au 31/10/2022</p>
+                            <div>
+                                <p><b>Forfait +hébergement</b></p>
+                                <p>à partir de 99€ sur un sélection d'hébergements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offersCard">
+                        <div class="offersImg">
+                            <img src="img/OP_3C877BB01BC202DEC11138F2F58F9FD9.png" alt="">
+                        </div>
+                        <div class="offersDesc">
+                            <h3>Early Booking Février</h3>
+                            <p>Du 10/10/2022 au 31/10/2022</p>
+                            <div>
+                                <p><b>Forfait +hébergement</b></p>
+                                <p>à partir de 99€ sur un sélection d'hébergements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideButtons">
+                    <ion-icon name="chevron-back-outline" class="scrlLeft"></ion-icon>
+                    <ion-icon name="chevron-forward-outline" class="scrlRight"></ion-icon>
+                </div>
+            </div>
             <div class="middle">
                 <div class="searchFilter hide-lg">
                     <ul>
@@ -371,13 +446,21 @@
                 </div>
                 <div class="sortResults">
                     <h3>3930 résultats</h3>
-                    <p class="trierPar">Trier Par :</p>
-                    <select id="sort">
-                        <option value="opt-1">Meilleurs avis</option>
-                        <option value="opt-2">Nombre d'avis</option>
-                        <option value="opt-3">Prix décroissants</option>
-                        <option value="opt-4">Prix croissants</option>
-                    </select>
+                    <div>
+                        <p class="trierPar">Trier Par :</p>
+                        <select id="sort">
+                            <option value="opt-1">Meilleurs avis</option>
+                            <option value="opt-2">Nombre d'avis</option>
+                            <option value="opt-3">Prix décroissants</option>
+                            <option value="opt-4">Prix croissants</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>La pierre saint martin<ion-icon name="close-outline"></ion-icon></p>
+                        <p>Appartements<ion-icon name="close-outline"></ion-icon></p>
+                        <p>6 janvier 2022 <span><ion-icon name="arrow-forward-outline"></ion-icon></span>17 janvier 2022<ion-icon name="close-outline"></ion-icon></p>
+                        <p>2 personnes<ion-icon name="close-outline"></ion-icon></p>
+                    </div>
                 </div>
                 <div class="sort-modal">
                     <div class="controls">
@@ -390,6 +473,10 @@
                     <div>
                         <p><b> Trier par:</b></p>
                         <ul class=""></ul>
+                        <div>
+                            <p>Pour afficher les prix des hébergements, vous devez d'abord choisir des dates de séjour.</p>
+                            <button class="primary-btn openDates"><ion-icon name="calendar-outline"></ion-icon>Choisir des dates</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -714,6 +801,104 @@
                             <p>Sélectionnez des dates de séjour pour afficher le tarif</p>
                         </div>
                     </div>
+                    <div class="endResults">
+                        <div class="diffDate">
+                            <div>
+                                <h3>Il n'y a plus de résultats pour cette recherche.</h3>
+                                <p> Voyons comment nous pouvons vous aider.</p>
+                            </div>
+                            <div>
+                                <h3>Décalez vos dates</h3>
+                                <p>Vos dates sont flexibles ? Essayez de décaler de vos dates de quelques jours pour obtenir plus de disponibilités</p>
+                                <p>Rechercher du 18/10/2022 au 25/10/2022</p>
+                                <p>Rechercher du 25/10/2022 au 01/11/2022</p>
+                            </div>
+                        </div>
+                        <div class="diffCategory">
+                            <h3>Essayez une autre catégorie d'hébergements</h3>
+                            <p>Vous n'êtes pas à cheval sur le type d'hébergement à [station] ? Essayez nos autres catégories sur les mêmes dates :</p>
+                            <div class="diffCatCards">
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/HELI_46EA3F3721C3E04E854BAF0BB8F253F3.png" alt="">
+                                    </div>
+                                    <h3>Hotels</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/NOVH_44905427E3CDD96C8B2CD23609372C0B (1).png" alt="">
+                                    </div>
+                                    <h3>Chambres d'hôtes</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/OP_C54895CC79C8AB3F26577D393A933928.png" alt="">
+                                    </div>
+                                    <h3>Campings</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diffStation">
+                            <h3>Essayez une autre station</h3>
+                            <p>Plus rien n'est disponible sur la station de votre choix à cette date ? Et si vous en profitiez pour partir à l'aventure dans une des 6 autres stations N'PY ?</p>
+                            <div class="diffTags">
+                                <p>Appartements<ion-icon name="close-outline"></ion-icon></p>
+                                <p>6 janvier 2022 17 janvier 2022<ion-icon name="close-outline"></ion-icon></p>
+                                <p>2 personnes<ion-icon name="close-outline"></ion-icon></p>
+                            </div>
+                            <div class="diffCatCards">
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/HELI_46EA3F3721C3E04E854BAF0BB8F253F3.png" alt="">
+                                    </div>
+                                    <h3>Cauterets</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/NOVH_44905427E3CDD96C8B2CD23609372C0B (1).png" alt="">
+                                    </div>
+                                    <h3>Grand Tourmalet</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/OP_C54895CC79C8AB3F26577D393A933928.png" alt="">
+                                    </div>
+                                    <h3>Gourette</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/HELI_46EA3F3721C3E04E854BAF0BB8F253F3.png" alt="">
+                                    </div>
+                                    <h3>Luz-Ardiden</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/NOVH_44905427E3CDD96C8B2CD23609372C0B (1).png" alt="">
+                                    </div>
+                                    <h3>Peyragudes</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                                <div class="diffCard">
+                                    <div>
+                                        <img src="img/OP_C54895CC79C8AB3F26577D393A933928.png" alt="">
+                                    </div>
+                                    <h3>Piau Engaly</h3>
+                                    <p>Lancer la recherche</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <h3>Contactez-nous !</h3>
+                            <p>Nos conseillers vous aident à trouver et à réserver votre logement , en respectant vos critères et votre budget. Vous pouvez nous joindre au 05 00 00 00 00 ou par mail à l'adresse contact@n-py.com</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="map">
                     <div class="controls">
@@ -724,6 +909,13 @@
                         <button class="primary-btn filter"><ion-icon name="funnel-outline"></ion-icon>Filtrer</button>
                         <button class="primary-btn openDates"><ion-icon name="calendar-outline"></ion-icon>Choisir des dates</button>
                     </div>
+                    <div class="info-map hide-lg">
+                        <p><b>Information importante</b><ion-icon name="close-outline" class="close-map-info"></ion-icon></p>
+                        <p>Pour afficher les tarifs des hébergements, veuillez choisir des dates de séjour</p>
+                        <button class="primary-btn openDates"><ion-icon name="calendar-outline"></ion-icon>Choisir des dates</button>
+                        <p class="close-map-info">OK, j'ai compris</p>
+                    </div>
+                    <div class="map-overlay"></div>
                 </div>
             </div>
         </section>

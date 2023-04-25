@@ -2,15 +2,17 @@ const options = {
   actions: {
       clickDay(event, dates) {
           
-        let start = dates[0].split('-');
-        let newStart =  start[2] + "/" +start[1]+ "/" +start[0];
-        let end = dates[dates.length -1].split('-');
-        let newEnd =  end[2]+ "/" +end[1]+ "/" +end[0];
+        // let start = dates[0].split('-');
+        // let newStart =  start[2] + "/" +start[1]+ "/" +start[0];
+        // let end = dates[dates.length -1].split('-');
+        // let newEnd =  end[2]+ "/" +end[1]+ "/" +end[0];
+        let start = dates[0];
+        let end = dates[dates.length - 1]
         
-        if(newStart > newEnd) {
-          displayDates(newEnd,newStart);
+        if(start > end) {
+          displayDates(end,start);
         }else{
-          displayDates(newStart,newEnd);
+          displayDates(start,end);
         }
       },
   },
@@ -46,13 +48,21 @@ calendar.init();
 let startDate = document.body.querySelector('.arrivee');
 let endDate = document.body.querySelector('.depart');
 
+let sortTags = document.body.querySelector('.sortTags ul');
+let sortLi = document.createElement('li');
+
 function displayDates(a,b){
   if(a,b){
-      startDate.textContent = a;
-      endDate.textContent = b;
+      let start = a.split('-');
+      let convStart =  start[2] + "/" +start[1]+ "/" +start[0];
+      let end = b.split('-');
+      let convEnd =  end[2]+ "/" +end[1]+ "/" +end[0];
+      startDate.textContent = convStart;
+      endDate.textContent = convEnd;
+      sortLi.innerHTML = convStart + " -> " + convEnd + "<ion-icon name=" + "close-outline></ion-icon>";
+      sortTags.append(sortLi)
   }else{
       startDate.innerHTML = "<ion-icon name=" + "calendar-outline" + "></ion-icon></ion-icon>Depart";
       endDate.innerHTML = "<ion-icon name=" + "calendar-outline" + "></ion-icon>Arrivee"
   }
-  console.log(a,b)
 }

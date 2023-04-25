@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- <script src="https://unpkg.com/akar-icons-fonts"></script> -->
     <link rel="stylesheet" href="https://npyresa.github.io/Assets/css/generique/npy_style_gen.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/dark.min.css" rel="stylesheet">
@@ -152,7 +153,7 @@
                                 <p class="hide-lg"><ion-icon name="triangle-outline"></ion-icon>Station</p>
                             </div>
                             <div class="main-content">
-                                <ul>
+                                <ul class="main-form">
                                     <li class="active">
                                         <p>Toutes destinatios</p>
                                         <form class="secondary">
@@ -165,10 +166,10 @@
                                     <li>
                                         <p>Cauterets</p>
                                         <form class="secondary">
-                                            <label>Cauterets Exemple<input type="radio" name="test"></label>
-                                            <label>Cauterets Exemple<input type="radio" name="test"></label>
-                                            <label>Cauterets Exemple<input type="radio" name="test"></label>
-                                            <label>Cauterets Exemple<input type="radio" name="test"></label>
+                                            <label>Cauterets Exemple<input type="radio" name="test" value="Cauterets1"></label>
+                                            <label>Cauterets Exemple<input type="radio" name="test" value="Cauterets1"></label>
+                                            <label>Cauterets Exemple<input type="radio" name="test" value="Cauterets1"></label>
+                                            <label>Cauterets Exemple<input type="radio" name="test" value="Cauterets1"></label>
                                             <label>Cauterets Exemple<input type="radio" name="test"></label>
                                             <label>Cauterets Exemple<input type="radio" name="test"></label>
                                             <label>Cauterets Exemple<input type="radio" name="test"></label>
@@ -189,10 +190,6 @@
                                     <li>
                                         <p>Gourette</p>
                                         <form class="secondary">
-                                            <label>Gourette Exemple<input type="radio" name="test"></label>
-                                            <label>Gourette Exemple<input type="radio" name="test"></label>
-                                            <label>Gourette Exemple<input type="radio" name="test"></label>
-                                            <label>Gourette Exemple<input type="radio" name="test"></label>
                                             <label>Gourette Exemple<input type="radio" name="test"></label>
                                             <label>Gourette Exemple<input type="radio" name="test"></label>
                                             <label>Gourette Exemple<input type="radio" name="test"></label>
@@ -253,8 +250,8 @@
                                     <li>
                                         <p>Peyragudes</p>
                                         <form class="secondary">
-                                            <label>Peyragudes Exemple<input type="radio" name="test"></label>
-                                            <label>Peyragudes Exemple<input type="radio" name="test"></label>
+                                            <label>Peyragudes Exemple<input type="radio" name="test" value="hola"></label>
+                                            <label>Peyragudes Exemple<input type="radio" name="test" value="hola2"></label>
                                             <label>Peyragudes Exemple<input type="radio" name="test"></label>
                                             <label>Peyragudes Exemple<input type="radio" name="test"></label>
                                             <label>Peyragudes Exemple<input type="radio" name="test"></label>
@@ -301,7 +298,7 @@
                             </div>
                             <div class="main-content">
                                 <form>
-                                    <label>Appartements meublés<input type="radio" name="test"></label>
+                                    <label>Appartements meublés Appartements<input type="radio" name="test"></label>
                                     <label>Hotels<input type="radio" name="test"></label>
                                     <label>Chambres d'hôtes<input type="radio" name="test"></label>
                                     <label>Campings<input type="radio" name="test"></label>
@@ -348,7 +345,7 @@
                                 <p class="hide-lg"><ion-icon name="person-outline"></ion-icon>Personnes</p>
                             </div>
                             <div class="main-content">
-                                <p class="hide-lg">4 Personnes</p>
+                                <p class="hide-lg">15 Personnes</p>
                                 <div class="ctrlButtons">
                                     <ion-icon name="remove-circle-outline" class="minus"></ion-icon>
                                     <ion-icon name="add-circle-outline" class="plus"></ion-icon>
@@ -455,11 +452,11 @@
                             <option value="opt-4">Prix croissants</option>
                         </select>
                     </div>
-                    <div>
-                        <p>La pierre saint martin<ion-icon name="close-outline"></ion-icon></p>
-                        <p>Appartements<ion-icon name="close-outline"></ion-icon></p>
-                        <p>6 janvier 2022 <span><ion-icon name="arrow-forward-outline"></ion-icon></span>17 janvier 2022<ion-icon name="close-outline"></ion-icon></p>
-                        <p>2 personnes<ion-icon name="close-outline"></ion-icon></p>
+                    <div class="sortTags">
+                        <ul>
+                            <li>La pierre saint martins <span>x</span></li>
+                            <li>Appartements <span>x</span></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="sort-modal">
@@ -801,6 +798,10 @@
                             <p>Sélectionnez des dates de séjour pour afficher le tarif</p>
                         </div>
                     </div>
+                    <div class="cards-buttons hide-lg">
+                        <button><ion-icon name="arrow-back-outline"></ion-icon>Page précédante</button>
+                        <button>Page suivante<ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
                     <div class="endResults">
                         <div class="diffDate">
                             <div>
@@ -926,14 +927,49 @@
             <p> L'offre d'hébergement, c'est d'abord des hôtels de toutes catégories. C'est aussi des appartements à louer, des chalets, des gîtes. Quand viennent les beaux jours et la saison estivale, profitez également de l'hébergement de plein air, en camping ou village vacances.</p>
             <p>Réserver votre hébergement de ski sur N'PY c'est profiter du meilleur prix garanti dans les stations des Pyrénées !</p>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="app">
+            <input type="text" v-model="nomFilm">
+            <button @click="addFilm()">add Film</button>
+            <p v-if="mesFilms.length > 0" v-for="film in mesFilms">{{film}}</p>
+            <p v-else>no films yet</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 
     <!-- calendar -->
+    <script src="app.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.5.6/build/vanilla-calendar.min.js"></script>
     <script src="js.js"> </script>
+
     <script type="module" src="calendar.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

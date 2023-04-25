@@ -3,18 +3,15 @@ Vue.createApp({
         return {
             mesFilms: [],
             nomFilm: '',
-
-    };
+        };
     },
     methods: {
-    addFilm(){
-        this.mesFilms.push(this.nomFilm);
-        this.nomFilm = ""
-    }
+        addFilm(){
+            this.mesFilms.push(this.nomFilm);
+            this.nomFilm = ""
+        },
+        sayHello(message){
+            alert(message);
+        }
     },
-    computed: {
-
-    },
-    watch:{
-    }
 }).mount('#app');

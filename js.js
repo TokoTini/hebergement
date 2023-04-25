@@ -28,14 +28,6 @@ leftButtons.forEach(function(leftButton){
     })
 })
 
-// if(li.classList.contains('active')){
-//     li.classList.remove('active');
-// }else {
-//     mainList.forEach(function(item) {
-//         item.classList.remove('active');
-//     })
-//     li.classList.add('active');
-// }
 
 let form = document.querySelectorAll('form');
 form.forEach(f => {
@@ -72,7 +64,7 @@ closeBtn.forEach(btn => {
 })
 
 
-//list for stations dropdown menu
+//stations dropdown menu list
 let secondaryList = document.querySelectorAll('.dropdown ul li')
 secondaryList.forEach(li => {
     li.addEventListener('click', (e) => {
@@ -85,32 +77,38 @@ secondaryList.forEach(li => {
     })
 })
 
+let sortTags = document.body.querySelector('.sortTags ul');
+let sortLi = document.createElement('li');
 
-
-//buttons for increase/decrease number of persons
+//increase/decrease number of persons
 let personnesInput = document.querySelector('.personnes p')
 let personnes = document.querySelector('.main-content > p');
 let plusBtn = document.querySelector('.plus')
 let minusBtn = document.querySelector('.minus')
 
 let n = 4;
-plusBtn.addEventListener('click', () => {
+function plusPeronnes(){
     n++;
     personnesInput.textContent = n +" " + "Personnes";
     personnes.textContent = n + " " + "Personnes";
-})
-
-minusBtn.addEventListener('click', () => {
-    if(n > 1){
-        n--;
-    }else{
-        n = 1;
-    }
+    return n;
+}
+function minusPersonnes(){
+    n--;
+    n = n > 1 ? n : 1;
     let person = n > 1 ? "Personnes" : "Personne";
     personnesInput.textContent = n +" "+ person;
     personnes.textContent = n +" "+ person;
-})
+}
 
+plusBtn.addEventListener('click', plusPeronnes);
+minusBtn.addEventListener('click', minusPersonnes);
+
+function addTags(a){
+    console.log(a)
+    sortLi.textContent = a.value;
+    sortTags.append(sortLi);
+}
 
 // display map modal on mobile devices + information importante modal
 let mapBtn = document.querySelector('.carte');
@@ -211,6 +209,9 @@ for(let i = 0; i < select.options.length; i++) {
     })
     ul.appendChild(li);
 }
+
+
+
 
 
 
@@ -318,4 +319,22 @@ ScrollTrigger.matchMedia({
   }
   
 });
+
+
+let testul = document.querySelector('.sortTags ul');
+let remove = testul.querySelectorAll('span')
+
+remove.forEach(btn => {
+    btn.addEventListener('click', () => {
+        let parent = btn.parentNode;
+        parent.parentNode.removeChild(parent);
+    })
+})
+
+
+let testStr = "xckaospdkasdsss";
+console.log(testStr.length);
+
+let updStr = testStr.length > 15 ? testStr.slice(0,12)+"..." : testStr;
+console.log(updStr)
 

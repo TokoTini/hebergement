@@ -312,9 +312,9 @@
                     </li>
                     <li class="dates">
                         <div class="dateButtons">
-                            <p class="arrivee"><ion-icon name="calendar-outline"></ion-icon>Arrivee</p>
+                            <p class="arrivee"><ion-icon name="calendar-outline"></ion-icon>Arrivée</p>
                             <p><ion-icon name="arrow-forward-outline"></ion-icon></p>
-                            <p class="depart"><ion-icon name="calendar-outline"></ion-icon></ion-icon>Depart</p>
+                            <p class="depart"><ion-icon name="calendar-outline"></ion-icon></ion-icon>Départ</p>
                         </div>
                         <div class="dropdown">
                             <div class="controls">
@@ -359,7 +359,7 @@
                     <li><button class="primary-btn">Rechercher</button>
                 </ul>
             </div>
-            <div class="offersCont">
+            <div class="offersCont hide-lg">
                 <p>Offres spéciales dans vos dates</p>
                 <div class="offers">
                     <div class="offersCard">
@@ -434,13 +434,6 @@
                 </div>
             </div>
             <div class="middle">
-                <div class="searchFilter hide-lg">
-                    <ul>
-                        <li class="filter"><ion-icon name="funnel-outline"></ion-icon>Filter</li>
-                        <li class="trier"><ion-icon name="funnel-outline"></ion-icon>Trier</li>
-                        <li class="carte"><ion-icon name="map-outline"></ion-icon>Carte</li>
-                    </ul>
-                </div>
                 <div class="sortResults">
                     <h3>3930 résultats</h3>
                     <div>
@@ -475,6 +468,13 @@
                             <button class="primary-btn openDates"><ion-icon name="calendar-outline"></ion-icon>Choisir des dates</button>
                         </div>
                     </div>
+                </div>
+                <div class="searchFilter hide-lg">
+                    <ul>
+                        <li class="filter"><ion-icon name="funnel-outline"></ion-icon>Filter</li>
+                        <li class="trier"><ion-icon name="funnel-outline"></ion-icon>Trier</li>
+                        <li class="carte"><ion-icon name="map-outline"></ion-icon>Carte</li>
+                    </ul>
                 </div>
             </div>
             <div class="lower">
@@ -941,13 +941,6 @@
 
 
 
-        <div id="app">
-            <input type="text" v-model="nomFilm">
-            <button @click="addFilm()">add Film</button>
-            <p v-if="mesFilms.length > 0" v-for="film in mesFilms">{{film}}</p>
-            <p v-else>no films yet</p>
-        </div>
-
 
 
 
@@ -966,7 +959,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 
     <!-- calendar -->
-    <script src="app.js"></script>
+    <script lang="vue" src="app.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.5.6/build/vanilla-calendar.min.js"></script>
     <script src="js.js"> </script>
 

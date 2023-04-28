@@ -59,7 +59,7 @@ function displayDates(a,b){
       let convEnd =  end[2]+ "/" +end[1]+ "/" +end[0];
       startDate.textContent = convStart;
       endDate.textContent = convEnd;
-      sortLi.innerHTML = convStart + " -> " + convEnd + "<ion-icon name=" + "close-outline></ion-icon>";
+      sortLi.innerHTML = convStart + " -> " + convEnd + "<span>x</span>";
       sortTags.append(sortLi)
   }else{
       startDate.innerHTML = "<ion-icon name=" + "calendar-outline" + "></ion-icon></ion-icon>Depart";

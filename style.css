@@ -149,12 +149,15 @@ input[type="radio"]:checked {
     body.disabled{
         overflow-y: hidden;
     }
+
     .npy_mod_98 {
         width: 100%;
-    }
+    }    
     .npy_mod_98 .cards-container .card{
-        min-width: 85vw;
+        min-width: 300px;
         width: 85vw;
+        height: 300px;
+        box-shadow: 0px  0px 25px 10px #3080c149;
     }
     .npy_mod_98 .text-content,
     .npy_mod_98 .carousel > h3,
@@ -181,11 +184,6 @@ input[type="radio"]:checked {
         gap: 20px;
         overflow-x: scroll;
     }
-    .npy_mod_98 .cards-container .card {
-        height: 450px;
-        box-shadow: 0px  0px 25px 10px #3080c149;
-    }
-
     .npy_mod_98 .cards-container .card .text {
         padding: 5px 25px;
         justify-content: space-evenly;
@@ -202,7 +200,7 @@ input[type="radio"]:checked {
 }
 /* start upper */
 .npy_mod_99 .upper{
-    width: 1240px;
+    width: 1220px;
     margin-inline: auto;
     height: 200px;
 }
@@ -434,6 +432,7 @@ input[type="radio"]:checked {
 }
 .npy_mod_99 .primary .dates.active .dropdown{
     display: flex;
+    z-index: 500;
 }
 /***
  *    ██████  ███████ ██████  ███████  ██████  ███    ██ ███    ██ ███████ ███████ 
@@ -547,6 +546,7 @@ input[type="radio"]:checked {
         height: fit-content;
         width: 100%;
         gap: 10px;
+        z-index: 500;
     }
     .npy_mod_99 .controls > div{
         display: flex;
@@ -609,6 +609,9 @@ input[type="radio"]:checked {
         box-shadow: none;
         width: 100%;
     }
+    .npy_mod_99 .station .dropdown .main-content > ul li.active .secondary label{
+        margin-bottom: 5px;
+    }
     .npy_mod_99 .station .dropdown .main-content .controls{
         position: absolute;
         right: 100%;
@@ -625,9 +628,8 @@ input[type="radio"]:checked {
 *                                                                        
 *                                                                        
 */
-
 .npy_mod_99 .category .main-content form{
-    max-width: fit-content;
+    min-width: 100%;
 }
 .npy_mod_99 .category .main-content form input{
     min-width: 20px;
@@ -648,6 +650,7 @@ input[type="radio"]:checked {
     .npy_mod_99 .primary .dates .dropdown #calendar{
         width: 100%;
         height: 100%;
+        padding: 0;
     }
     .npy_mod_99 .primary .dates .dropdown .vanilla-calendar-grid{
         display: flex;
@@ -686,7 +689,7 @@ input[type="radio"]:checked {
 }
 .npy_mod_99 .middle .sortResults {
     display: flex;
-    gap: 50px;
+    gap: 25px;
     align-items: center;
     min-height: 40px;
     flex-wrap: wrap;
@@ -732,7 +735,7 @@ input[type="radio"]:checked {
     width: 100vw;
     height: 100vh;
     background-color: white;
-    z-index: 5;
+    z-index: 500;
 }
 .npy_mod_99 .sort-modal .controls > div{
     display: flex;
@@ -783,16 +786,17 @@ input[type="radio"]:checked {
     }
     .npy_mod_99 .searchFilter{
         display: block;
-        height: 70px;
+        height: 60px;
     }
     .npy_mod_99 .searchFilter.fixed ul{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        height: 60px;
         background-color: white;
         border-radius: 0;
-        z-index: 5;
+        z-index: 500;
         border-radius: 0;
         border-left: 0;
         border-right: 0;
@@ -802,7 +806,7 @@ input[type="radio"]:checked {
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        height: 70px;
+        height: 100%;
         border-radius: 10px;
         border: 1px solid #3080c149;
     }
@@ -811,7 +815,7 @@ input[type="radio"]:checked {
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 80%;
     }
     .npy_mod_99 .searchFilter > ul li{
         border-right: 1px solid #3080c149;
@@ -842,7 +846,6 @@ input[type="radio"]:checked {
 .npy_mod_99 .offersCont .slideButtons{
     display: flex;
     width: 100%;
-    justify-content: flex-end;
     align-items: center;
     gap: 30px;
     cursor: pointer;
@@ -1090,12 +1093,14 @@ input[type="radio"]:checked {
 .npy_mod_99 .map{
     position: relative;
     background-color: white;
-    width: 640px;
+}
+.npy_mod_99 .map,
+.npy_mod_99 .map iframe {
+    width: 650px;
 }
 
 .npy_mod_99 .map iframe {
-    width: 640px;
-    height: 700px;
+    height: 750px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -1225,6 +1230,7 @@ input[type="radio"]:checked {
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 500;
     }
     .npy_mod_99 .map .controls{
         background-color: white;
@@ -1456,18 +1462,76 @@ input[type="radio"]:checked {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 3000px;
+    margin-bottom: 500px;
 }
 /* mod 100 media queries */
 @media only screen and (max-width: 768px) {
     .npy_mod_100 {
         width: 100%;
         padding-inline: 5%;
+
+    }
+}
+
+@media only screen and (max-width: 768px){ 
+    p {
+        font-size: 14px;
+    }
+    label {
+        font-size: 14px;
+    }
+
+}
+@media only screen and (max-width: 1700px) and (min-width: 768px){ 
+    .map {
+        display: none;
+    }
+    .npy_mod_98{
+        width: 1240px;
+        margin-inline: auto;
+    }
+    .npy_mod_99{
+        width: 1240px;
+        margin-inline: auto;
+        padding: 0;
+    }
+    .npy_mod_99 .upper{
+        margin: 0;
+        width: 1240px;
+    }
+    .npy_mod_99 .lower{
+        justify-content: space-between;
     }
 }
 
 
 
+/* -------------------------------- */
 
 
-/* -------------------------------- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

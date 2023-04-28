@@ -91,7 +91,7 @@ function plusPeronnes(){
     n++;
     personnesInput.textContent = n +" " + "Personnes";
     personnes.textContent = n + " " + "Personnes";
-    return n;
+    addTags(n);
 }
 function minusPersonnes(){
     n--;
@@ -99,14 +99,15 @@ function minusPersonnes(){
     let person = n > 1 ? "Personnes" : "Personne";
     personnesInput.textContent = n +" "+ person;
     personnes.textContent = n +" "+ person;
+    addTags(n);
 }
 
 plusBtn.addEventListener('click', plusPeronnes);
 minusBtn.addEventListener('click', minusPersonnes);
 
 function addTags(a){
-    console.log(a)
-    sortLi.textContent = a.value;
+    let person = a > 1 ? "Personnes" : "Personne";
+    sortLi.innerHTML = n +" "+ person + "<span>x</span>";
     sortTags.append(sortLi);
 }
 
@@ -227,7 +228,6 @@ scrollLeft.forEach(function(leftBtn){
             left: -300,
             behavior: 'smooth'
         })
-        console.log('hola')
     })
 })
 
@@ -238,7 +238,6 @@ scrollRight.forEach(function(rightBtn){
             left: 300,
             behavior: 'smooth'
         })
-        console.log('hola')
     })
 })
 
@@ -299,7 +298,7 @@ ScrollTrigger.matchMedia({
     gsap.to('.searchFilter',{
         scrollTrigger: {
             trigger: ".lower",
-            start: "top 20%",
+            start: "top 15%",
             end: "bottom 20%",
             toggleClass: { className: "fixed", targets: ".searchFilter" },
             toggleActions: "resume none none none",

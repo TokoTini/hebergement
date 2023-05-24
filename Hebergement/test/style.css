@@ -1,0 +1,414 @@
+/* start upper */
+.npy_mod_99 .upper > h3 {
+    margin-bottom: 50px;
+}
+
+.primary-btn{
+    all: unset;
+    background-color: #F96B00;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.hide-lg {
+    display: none;
+}
+.npy_mod_99 input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+input[type="radio"]:checked {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    font: inherit;
+    background: #7bff9a;
+}
+.npy_mod_99 .upper label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ul {
+    list-style: none;
+}
+/* mod 99 */
+.npy_mod_99 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin: 100px 0;
+    padding: 10px;
+}
+.npy_mod_99 .upper{
+    width: 1240px;
+    margin-inline: auto;
+    height: 150px;
+}
+/* primary unordered list */
+.npy_mod_99 .primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px  0px 25px 10px #3080c149;
+}
+.npy_mod_99 .primary.active {
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+.npy_mod_99 .primary ion-icon {
+    margin-right: 7px;
+}
+/* primary list */
+.npy_mod_99 .primary > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 70%;
+    border-right: 1px solid grey;
+}
+.npy_mod_99 .primary > li:nth-last-child(1),
+.npy_mod_99 .primary > li:nth-last-child(2){
+    border-right: none;
+}
+.npy_mod_99 .primary > li:nth-child(3){
+    flex: 1;
+    max-width: 350px;
+}
+.npy_mod_99 .primary > li:nth-child(3) .dateButtons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+.npy_mod_99 .primary > li:nth-child(3) .dateButtons p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+/* dropdown menu for each li item */
+.npy_mod_99 .primary .dropdown {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    min-width: 100%;
+    max-width: fit-content;
+    padding: 10px 20px;
+    background-color: white;
+    line-height: 40px;
+    border-radius: 5px;
+    box-shadow: 0px  10px 20px 5px #3080c149;
+}
+.npy_mod_99 .primary li > .dropdown {
+    display: none;
+ }
+ .npy_mod_99 .primary li.active > .dropdown {
+    display: block;
+ }
+/***
+ *    ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+ *    ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
+ *    ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
+ *         ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
+ *    ███████    ██    ██   ██    ██    ██  ██████  ██   ████ 
+ *                                                                                                                       
+ */
+
+.npy_mod_99 .station,
+.npy_mod_99 .category,
+.npy_mod_99 .dates,
+.npy_mod_99 .personnes {
+    position: relative;
+}
+.npy_mod_99 .station .dropdown .secondary{
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 0;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 500px;
+    height: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px  10px 20px 5px #3080c149;
+}
+.npy_mod_99 .station .dropdown ul > li{
+    padding: 0 5px;
+}
+.npy_mod_99 .station .dropdown ul > li.active{
+    background-color: #3080c149;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.npy_mod_99 .station .dropdown li.active .secondary{
+    display: flex;
+}
+/* dropdown-menu for station */
+
+/***
+ *     ██████  █████  ████████ ███████  ██████   ██████  ██████  ██    ██ 
+ *    ██      ██   ██    ██    ██      ██       ██    ██ ██   ██  ██  ██  
+ *    ██      ███████    ██    █████   ██   ███ ██    ██ ██████    ████   
+ *    ██      ██   ██    ██    ██      ██    ██ ██    ██ ██   ██    ██    
+ *     ██████ ██   ██    ██    ███████  ██████   ██████  ██   ██    ██    
+ *                                                                        
+ *                                                                        
+ */
+
+.npy_mod_99 .primary .category .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary .category.active .dropdown{
+    display: flex;
+}
+.npy_mod_99 .primary .category .dropdown form{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+/***
+ *    ██████   █████  ████████ ███████ ███████ 
+ *    ██   ██ ██   ██    ██    ██      ██      
+ *    ██   ██ ███████    ██    █████   ███████ 
+ *    ██   ██ ██   ██    ██    ██           ██ 
+ *    ██████  ██   ██    ██    ███████ ███████ 
+ *                                             
+ *                                             
+ */
+
+.npy_mod_99 .primary .dates .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary .dates.active .dropdown{
+    display: flex;
+}
+/***
+ *    ██████  ███████ ██████  ███████  ██████  ███    ██ ███    ██ ███████ ███████ 
+ *    ██   ██ ██      ██   ██ ██      ██    ██ ████   ██ ████   ██ ██      ██      
+ *    ██████  █████   ██████  ███████ ██    ██ ██ ██  ██ ██ ██  ██ █████   ███████ 
+ *    ██      ██      ██   ██      ██ ██    ██ ██  ██ ██ ██  ██ ██ ██           ██ 
+ *    ██      ███████ ██   ██ ███████  ██████  ██   ████ ██   ████ ███████ ███████ 
+ *                                                                                 
+ *                                                                                 
+ */
+
+ .npy_mod_99 .primary .personnes .dropdown{
+    display: none;
+}
+.npy_mod_99 .primary  .personnes.active .dropdown{
+    display: flex;
+}
+ .npy_mod_99 .primary .personnes .ctrlButtons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+ }
+ .npy_mod_99 .personnes .dropdown .main-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+ } 
+
+/* 
+ ███    ███ ███████ ██████  ██  █████  
+ ████  ████ ██      ██   ██ ██ ██   ██ 
+ ██ ████ ██ █████   ██   ██ ██ ███████ 
+ ██  ██  ██ ██      ██   ██ ██ ██   ██ 
+ ██      ██ ███████ ██████  ██ ██   ██  
+*/
+
+@media only screen and (max-width: 768px) { 
+.hide-lg {
+    display: block;
+}
+.npy_mod_99 .upper {
+    width: 90%;
+    margin-inline: auto;
+}
+.npy_mod_99 .primary {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+.npy_mod_99 .upper .primary > li {
+    border-bottom: 1px solid #3080c149;
+    width: 80%;
+    justify-content: flex-start;
+}
+
+.npy_mod_99 .primary > li,
+.npy_mod_99 .primary > li:nth-child(3){
+    border-right: none;
+    flex: none;
+    height: 100px;
+}
+.npy_mod_99 .primary > li:nth-child(3) .dateButtons{
+    justify-content: space-between;
+    padding: 0;
+}
+.npy_mod_99 .primary > li:nth-child(4),
+.npy_mod_99 .primary > li:last-child{
+    border-bottom: none;
+}
+.npy_mod_99 .primary > li:last-child{
+    justify-content: center;
+}
+.npy_mod_99 .primary > li:last-child button{
+    width: 100%;
+    height: 50px;
+}
+
+.npy_mod_99 .primary .station {
+    position: static;
+}
+
+.npy_mod_99 .primary > li.active .dropdown {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.npy_mod_99 .controls ion-icon {
+    font-size: 40px;
+ }
+ .npy_mod_99 .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 70px;
+    border-bottom: 1px solid #3080c149;
+ }
+ .npy_mod_99 .controls p{
+    display: flex;
+    align-items: center;
+ }
+ .npy_mod_99 .btnValider {
+    height: 70px;
+    border-top: 1px solid #3080c149;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .npy_mod_99 .dropdown .main-content {
+    padding: 30px;
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+ }
+/***
+ *    ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+ *    ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
+ *    ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
+ *         ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
+ *    ███████    ██    ██   ██    ██    ██  ██████  ██   ████ 
+ *                                                                                                                       
+ */
+
+ .npy_mod_99 .station .dropdown .main-content > ul li {
+    padding: 20px;
+    border-bottom: 1px solid #3080c149;
+ }
+ .npy_mod_99 .station .dropdown .main-content > ul li:last-child {
+    border-bottom: none;
+ }
+ .npy_mod_99 .station .dropdown .main-content > ul li.active{
+    background-color: white;
+ } 
+ .npy_mod_99 .station .dropdown .main-content > ul li.active .secondary {
+    position: static;
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+ } 
+
+
+ /***
+ *    ██████   █████  ████████ ███████ ███████ 
+ *    ██   ██ ██   ██    ██    ██      ██      
+ *    ██   ██ ███████    ██    █████   ███████ 
+ *    ██   ██ ██   ██    ██    ██           ██ 
+ *    ██████  ██   ██    ██    ███████ ███████ 
+ *                                             
+ *                                             
+ */
+
+
+ .npy_mod_99 .primary .dates .dropdown #calendar{
+    width: 100%;
+    height: 100%;
+}
+.npy_mod_99 .primary .dates .dropdown .vanilla-calendar-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/***
+ *    ██████  ███████ ██████  ███████  ██████  ███    ██ ███    ██ ███████ ███████ 
+ *    ██   ██ ██      ██   ██ ██      ██    ██ ████   ██ ████   ██ ██      ██      
+ *    ██████  █████   ██████  ███████ ██    ██ ██ ██  ██ ██ ██  ██ █████   ███████ 
+ *    ██      ██      ██   ██      ██ ██    ██ ██  ██ ██ ██  ██ ██ ██           ██ 
+ *    ██      ███████ ██   ██ ███████  ██████  ██   ████ ██   ████ ███████ ███████ 
+ *                                                                                 
+ *                                                                                 
+ */
+ .npy_mod_99 .primary .personnes .number{
+    width: 100%;
+}
+.npy_mod_99 .primary .personnes .number > div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+}
+
+/* end upper  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
